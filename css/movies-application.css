@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Homenaje&family=IM+Fell+English+SC&display=swap");
+
+/* font-family: 'Homenaje', sans-serif;
+font-family: 'IM Fell English SC', serif; */
+
+:root {
+  --yellow: #ccff00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.page-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/img/bg-img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 100px 0 100px;
+  color: white;
+  font-family: "Homenaje", sans-serif;
+}
+.container {
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.row {
+  display: flex;
+  width: 100%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+header.container {
+  background-image: url(/img/landing-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.company {
+  font-family: "IM Fell English SC", serif;
+  font-size: 32px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  border-right: 2px solid rgba(255, 255, 255, 0.452);
+  width: 100%;
+  cursor: pointer;
+
+  & a {
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      transform: scale(1.2);
+      color: var(--yellow);
+    }
+    color: white;
+  }
+  &:last-of-type {
+    border-right: none;
+  }
+}
+
+select {
+  background: transparent;
+  color: white;
+  border: none;
+  &:focus {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+button.sign-in {
+  background: transparent;
+  color: white;
+  border-color: var(--yellow);
+  border-radius: 20px;
+  padding: 2px 15px;
+}
+i.bi-globe-americas {
+  color: #ccff00;
+}
+
+div.hero {
+  margin-top: 200px;
+  margin-bottom: 100px;
+}
+
+.yellow-font,
+i.bi-calendar3 {
+  color: #ccff00;
+}
+
+.movie-span {
+  background-color: white;
+  color: black;
+  padding: 0 5px;
+  border-radius: 4px;
+  border: none;
+}
+.hd-span {
+  border: 1px solid white;
+  padding: 0 5px;
+  border-radius: 4px;
+}
+
+button.play {
+  border: 1px solid var(--yellow);
+  background: transparent;
+  color: white;
+  border-radius: 15px;
+  &.me-2 {
+    border: none;
+    color: var(--yellow);
+    transform: scale(1.3);
+  }
+}
+
+.bi-play-fill {
+  transform: scale(1.3);
+}
+
+.streaming {
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+.upcomming-types {
+  gap: 30px;
+}
+
+.upcomming-type {
+  padding: 5px 25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border-radius: 25px;
+  font-size: 20px;
+}
+
+.carousel-item img {
+  width: 200px;
+}
