@@ -1,3 +1,3 @@
-prompt("You are waiting...");
+//prompt("You are waiting...");
 
-console.log(prompt());
+//console.log(prompt());

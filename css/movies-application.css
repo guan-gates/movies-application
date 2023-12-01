@@ -3,6 +3,11 @@
 /* font-family: 'Homenaje', sans-serif;
 font-family: 'IM Fell English SC', serif; */
 
+.spinner-grow {
+  width: 3rem;
+  height: 3rem;
+
+}
 :root {
   --yellow: #ccff00;
 }
@@ -166,3 +171,7 @@ button.play {
 .carousel-item img {
   width: 200px;
 }
+
+
+
+
