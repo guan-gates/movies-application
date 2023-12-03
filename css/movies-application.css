@@ -193,9 +193,10 @@ button.play {
 #addMovieModal {
   border: 3px solid black;
   border-radius: 10px;
-  border-top-color: white;
-  border-left-color: white;
-  box-shadow: 12px 12px 2px 1px darkslategrey;
+  border-top-color: #ccff00;
+  border-left-color: #ccff00;
+  box-shadow: 12px 12px 2px 1px #192711;
+
   width: 40%;
 }
 .input-group {
@@ -204,15 +205,20 @@ button.play {
 
 .modal-title {
   background-color: black;
+  border-radius: 5px;
   height: 10%;
   width: 100%;
   font-size: 25pt;
+  color: #ccff00;
+  padding-left: 8px;
 }
 
 .close {
-  color: black;
+  color: #ccff00;
   float: right;
   font-weight: bold;
+  border: unset;
+  background-color: black;
 }
 .close:hover,
 .close:focus {
@@ -226,7 +232,10 @@ button.play {
   width: 40%;
   font-weight: bold;
 }
-
+.input-group-text {
+  background-color: #ccff00;
+  border: 2px solid black;
+}
 .form-range {
   color: #ccff00;
   width: 200%;
