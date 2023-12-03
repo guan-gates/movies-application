@@ -201,9 +201,7 @@ button.play {
 .input-group {
   width: 30%;
 }
-.modal-dialog {
 
-}
 .modal-title {
   background-color: black;
   height: 10%;
@@ -222,9 +220,16 @@ button.play {
   text-decoration: none;
   cursor: pointer;
 }
+#save-changes {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 40%;
+  font-weight: bold;
+}
 
 .form-range {
   color: #ccff00;
+  width: 200%;
 }
 .carousel-item img {
   width: 200px;

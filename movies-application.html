@@ -133,9 +133,11 @@
                                                 <h6>Movie Year</h6>
                                             </div>
                                             <div class="row mt-3">
+                                                <div class="col px-4">
                                                 <label>
                                                     <input type="text" placeholder="Movie Year">
                                                 </label>
+                                                </div>
                                             </div>
                                         </div>
 <!--                                        movie year end -->
@@ -155,32 +157,32 @@
 <!--                                        movie description end-->
                                     </form>
                                 <div class="row">
-                                    <div class="input-group mb-3 px-3 justify-content-center">
+                                    <div class="input-group mb-3 px-2 justify-content-center">
                                         <div class="input-group-text">
                                             <input class="form-check-input mt-0" type="checkbox" value="Action" aria-label="Checkbox for following text input">Action
                                         </div>
                                     </div>
-                                    <div class="input-group mb-3 px-3">
+                                    <div class="input-group mb-3 px-2 justify-content-center">
                                         <div class="input-group-text">
                                             <input class="form-check-input mt-0" type="checkbox" value="Comedy" aria-label="Checkbox for following text input">Comedy
                                         </div>
                                     </div>
-                                    <div class="input-group mb-3 px-3">
+                                    <div class="input-group mb-3 px-2 justify-content-center">
                                         <div class="input-group-text">
                                             <input class="form-check-input mt-0" type="checkbox" value="Adventure" aria-label="Checkbox for following text input">Adventure
                                         </div>
                                     </div>
-                                    <div class="input-group mb-3 px-3 justify-content-center">
+                                    <div class="input-group mb-3 px-2 justify-content-center">
                                         <div class="input-group-text">
                                             <input class="form-check-input mt-0" type="checkbox" value="Drama" aria-label="Checkbox for following text input">Drama
                                         </div>
                                     </div>
-                                    <div class="input-group mb-3 px-3">
+                                    <div class="input-group mb-3 px-2 justify-content-center">
                                         <div class="input-group-text">
                                             <input class="form-check-input mt-0" type="checkbox" value="Family" aria-label="Checkbox for following text input">Family
                                         </div>
                                     </div>
-                                    <div class="input-group mb-3 px-3">
+                                    <div class="input-group mb-3 px-2 justify-content-center">
                                         <div class="input-group-text">
                                             <input class="form-check-input mt-0" type="checkbox" value="Sci-Fi" aria-label="Checkbox for following text input">Sci-Fi
                                         </div>
@@ -188,7 +190,7 @@
                                 </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">
+                                    <div class="col px-4">
                                 <label for="customRange2" class="form-label">Rating
                                     <input type="range" class="form-range" min="0" max="5" id="customRange2">
                                 </label>
@@ -277,20 +279,26 @@
     </div>
 <footer class="footer">
     <div class="row mb-3 pt-3">
+        <div class="col">
             <h3>Get updated when we tell you our next favorite movie!!</h3>
+        </div>
+        <div class="col">
+            <div class="mb-2">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div id="emailHelp" class="form-text-footer mb-3">We'll never share your email with anyone else.
+            </div>
+            <span><input type="checkbox" class="checkbox mb-5" required>By clicking the box, you agree that movies are great and Jason should give us a 100!</span>
+        </div>
     </div>
     <div class="row">
-        <div class="mb-2">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
 
-        <div id="emailHelp" class="form-text-footer mb-3">We'll never share your email with anyone else.
-        </div>
 
-        <span><input type="checkbox" class="checkbox mb-5" required>By clicking the box, you agree that movies are great and Jason should give us a 100!</span>
+
     </div>
-
+<h4>You will find us on none of these platforms!</h4>
     <div class="mb-3 mt-3 d-flex flex-row justify-content-start">
             <a target="_blank" href="https://www.youtube.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_15557_122208)"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.109 13.6882L11.1081 5.69867L18.6734 9.7072L11.109 13.6882ZM27.72 4.31421C27.72 4.31421 27.4461 2.35482 26.607 1.49198C25.5421 0.359 24.3486 0.353668 23.8017 0.287911C19.8835 3.61067e-07 14.0061 0 14.0061 0H13.9939C13.9939 0 8.1165 3.61067e-07 4.19825 0.287911C3.6505 0.353668 2.45787 0.359 1.39212 1.49198C0.553 2.35482 0.28 4.31421 0.28 4.31421C0.28 4.31421 0 6.61572 0 8.91634V11.0739C0 13.3754 0.28 15.676 0.28 15.676C0.28 15.676 0.553 17.6354 1.39212 18.4982C2.45787 19.6312 3.857 19.5957 4.48 19.7139C6.72 19.9325 14 20 14 20C14 20 19.8835 19.9911 23.8017 19.7032C24.3486 19.6366 25.5421 19.6312 26.607 18.4982C27.4461 17.6354 27.72 15.676 27.72 15.676C27.72 15.676 28 13.3754 28 11.0739V8.91634C28 6.61572 27.72 4.31421 27.72 4.31421Z" fill="#EAE8E1"></path></g><defs><clipPath id="clip0_15557_122208"><rect width="28" height="20" fill="white"></rect></clipPath></defs></svg><span style="display: none;" class="ae-compliance-indent"> YouTube Video </span></a>
             <a target="_blank" href="https://www.pinterest.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17t4vlu" focusable="false" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_15557_122212)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0006 0C4.47816 0 0 4.47698 0 10.0006C0 14.0942 2.46252 17.6127 5.98695 19.1592C5.95872 18.4618 5.98224 17.6222 6.15982 16.8625C6.35268 16.051 7.44635 11.4141 7.44635 11.4141C7.44635 11.4141 7.12765 10.7756 7.12765 9.83125C7.12765 8.3495 7.9873 7.2429 9.05627 7.2429C9.96531 7.2429 10.4051 7.92615 10.4051 8.74463C10.4051 9.65838 9.82184 11.026 9.52196 12.2926C9.27148 13.3545 10.0535 14.2189 11.1001 14.2189C12.9946 14.2189 14.2706 11.7857 14.2706 8.90222C14.2706 6.71135 12.7947 5.07085 10.11 5.07085C7.07709 5.07085 5.18728 7.33227 5.18728 9.85829C5.18728 10.7309 5.44364 11.3447 5.84583 11.8198C6.03163 12.0397 6.05633 12.1268 5.9893 12.3784C5.94226 12.5607 5.83172 13.0052 5.78585 13.1805C5.71882 13.4333 5.5142 13.525 5.28606 13.4309C3.88781 12.8606 3.23749 11.3306 3.23749 9.61016C3.23749 6.77015 5.63297 3.36215 10.384 3.36215C14.2024 3.36215 16.7155 6.12689 16.7155 9.09155C16.7155 13.0146 14.5352 15.9452 11.3189 15.9452C10.2405 15.9452 9.22444 15.3619 8.87634 14.6998C8.87634 14.6998 8.29541 17.0036 8.17311 17.4481C7.96143 18.2184 7.5463 18.9898 7.16646 19.5896C8.06609 19.8554 9.01629 20 10.0006 20C15.523 20 20 15.523 20 10.0006C20 4.47698 15.523 0 10.0006 0Z" fill="#EAE8E1"></path></g><defs><clipPath id="clip0_15557_122212"><rect width="20" height="20" fill="white"></rect></clipPath></defs></svg></svg><span class="ae-compliance-indent" style="display:none;">Pinterest</span></a>
@@ -301,7 +309,73 @@
         </div>
 
 
-    <div class="row"></div>
+    <div class="row">
+        <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-2 css-jrgtfs">
+            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-htot9g"><span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">© 2023 Filmagnet, LLC. All Rights Reserved.</span>
+                <hr>
+            </div>
+            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-12 MuiGrid-grid-md-12 css-tg633c">
+                <div class="MuiGrid-root MuiGrid-container css-lduode">
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_self" href="/website-terms"><span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">Website Terms</span>
+                            </a>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_self" href="/privacy-policy"><span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">Privacy Policy</span>
+                            </a>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_blank" href="https://privacyportal-cdn.onetrust.com/dsarwebform/b7f992ed-a2f9-447a-90af-da78d91e7bac/bd4cb3ad-02ac-4e62-b9af-22fdbf01ec52.html" aria-describedby="audioeye_new_window_message"><span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">Do Not Sell or Share My Personal Information</span>
+                            </a>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_self" href="/privacy-policy?section=california-privacy-rights"><span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">California: Your Privacy Rights</span>
+                            </a>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_self" href="/accessibility-statement"><span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">Accessibility Statement</span>
+                            </a>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_self" href="/legal-and-regulatory-complicance"><span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">CA Transparency in Supply Chains Act</span>
+                            </a>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_self" href="/supplier-code-of-conduct">
+                                <span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">Supplier Code of Conduct</span>
+                            </a>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="MuiGrid-root MuiGrid-item css-1wxaqej">
+                        <div class="MuiGrid-root MuiGrid-container css-1d3bbye">
+                            <a target="_blank" href="https://assets.ctfassets.net/01to7kbtr3az/1HjG8U487Nwb1A8qWb23YU/e5ebabbc8ac6dbf82d27e1b047b8b3a4/Chobani_Perspective_on_Marketing_to_Children.pdf" aria-describedby="audioeye_pdf_message audioeye_new_window_message">
+                                <span class="MuiTypography-root MuiTypography-d2c_link3 css-7aqeqg">Marketing to Children</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row"></div>
     <div class="row"></div>
 </footer>
