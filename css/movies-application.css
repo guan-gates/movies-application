@@ -198,7 +198,9 @@ button.play {
   background-color: black;
   color: var(--yellow);
   width: 100%;
-  height: 30dvh;
+  height: 100dvh;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .form-text-footer {
   color: var(--yellow);
