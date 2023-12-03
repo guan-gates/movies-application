@@ -190,6 +190,42 @@ button.play {
   font-size: 20px;
 }
 
+#addMovieModal {
+  border: 3px solid black;
+  border-radius: 10px;
+  border-top-color: white;
+  border-left-color: white;
+  box-shadow: 12px 12px 2px 1px darkslategrey;
+  width: 40%;
+}
+.input-group {
+  width: 30%;
+}
+.modal-dialog {
+
+}
+.modal-title {
+  background-color: black;
+  height: 10%;
+  width: 100%;
+  font-size: 25pt;
+}
+
+.close {
+  color: black;
+  float: right;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-range {
+  color: #ccff00;
+}
 .carousel-item img {
   width: 200px;
 }
