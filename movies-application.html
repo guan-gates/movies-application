@@ -103,7 +103,106 @@
                   <button class="upcomming-type">TV Shows</button>
                   <button class="upcomming-type">Anime</button>
                 </div>
-                <button class="upcomming-type">+ Add Movie</button>
+
+                <button type="button" class="upcomming-type" data-toggle="modal" data-target="#modalCenter">+ Add Movie
+                </button>
+
+                    <div class="modal-fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitle">Add Movie
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                    </button></h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+<!--                                        movie title start-->
+                                        <div class="row mt-3">
+                                            <div class="col px-4">
+                                                <h6>Movie Title</h6>
+                                                <label>
+                                                    <input type="text" placeholder="Movie Title">
+                                                </label>
+                                            </div>
+                                        </div>
+<!--                                        movie title end -->
+<!--                                        movie year start-->
+                                        <div class="row mt-3">
+                                            <div class="col px-4">
+                                                <h6>Movie Year</h6>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <label>
+                                                    <input type="text" placeholder="Movie Year">
+                                                </label>
+                                            </div>
+                                        </div>
+<!--                                        movie year end -->
+<!--                                        movie description start -->
+                                        <div class="row mt-3">
+                                            <div class="col px-4">
+                                                <h6>Description</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col px-4">
+                                                <label class="description-text">
+                                                    <textarea rows="5" cols="60"></textarea>
+                                                </label>
+                                            </div>
+                                        </div>
+<!--                                        movie description end-->
+                                    </form>
+                                <div class="row">
+                                    <div class="input-group mb-3 px-3 justify-content-center">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input mt-0" type="checkbox" value="Action" aria-label="Checkbox for following text input">Action
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3 px-3">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input mt-0" type="checkbox" value="Comedy" aria-label="Checkbox for following text input">Comedy
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3 px-3">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input mt-0" type="checkbox" value="Adventure" aria-label="Checkbox for following text input">Adventure
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3 px-3 justify-content-center">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input mt-0" type="checkbox" value="Drama" aria-label="Checkbox for following text input">Drama
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3 px-3">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input mt-0" type="checkbox" value="Family" aria-label="Checkbox for following text input">Family
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3 px-3">
+                                        <div class="input-group-text">
+                                            <input class="form-check-input mt-0" type="checkbox" value="Sci-Fi" aria-label="Checkbox for following text input">Sci-Fi
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                <label for="customRange2" class="form-label">Rating
+                                    <input type="range" class="form-range" min="0" max="5" id="customRange2">
+                                </label>
+                                </div>
+                            </div>
+                                <div class="modal-footer">
+
+
+                                    <button type="button" class="btn btn-primary">Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
           </div>
         </div>
