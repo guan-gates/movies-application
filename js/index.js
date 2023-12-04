@@ -1,12 +1,4 @@
-import {
-  getMovie,
-  postMovie,
-  patchMovie,
-  deleteMovie,
-  dbGetTrendingMovies,
-  dbGetMovieTrailerID,
-  dbGetMoviesByKeywords,
-} from "./api.js";
+
 
 // !!!I might not need the function as most queries return an arry of movie objects, but just keep it here for now
 // query single movie trailer ID
@@ -40,3 +32,4 @@ const addMovieTrailerIDtoMovie = async (movie) => {
   //
   // postMovie is fully functional. It will return.
 })();
+
