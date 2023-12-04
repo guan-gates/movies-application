@@ -1,11 +1,4 @@
-import {
-  getMovie,
-  postMovie,
-  patchMovie,
-  deleteMovie,
-  dbGetTrendingMovies,
-  dbGetMovieTrailerID,
-} from "./api.js";
+
 
 // query single movie trailer ID
 const addMovieTrailerIDtoMovie = async (movie) => {
@@ -44,7 +37,3 @@ const addMovieTrailerIDtoMovies = async (movies) => {
 })();
 
 
-
-/// just add something to the working tree
-
-add something to the working tree!. Delete this !!!!
