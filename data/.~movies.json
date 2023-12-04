@@ -51,6 +51,20 @@
       "trailerSRC": "https://www.youtube.com/embed/OdAVwckh_EE",
       "rating": 2,
       "id": 4
+    },
+    {
+      "title": "Willy Wonka & the Chocolate Factory",
+      "movieId": 252,
+      "imgSRC": "https://image.tmdb.org/t/p/w500/4yDIYI90akVOsaqk4ct2jlvjpYz.jpg",
+      "year": "1971",
+      "genre": [
+        "Family",
+        "Fantasy",
+        "Comedy"
+      ],
+      "trailerSRC": "https://www.youtube.com/embed/ZP--GlxM2a8",
+      "rating": 2,
+      "id": 5
     }
   ]
 }

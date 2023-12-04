@@ -39,7 +39,15 @@ font-family: 'IM Fell English SC', serif; */
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p, ul, li {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li {
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -84,7 +92,6 @@ header.container {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
 
 .company {
   font-family: "IM Fell English SC", serif;
@@ -215,6 +222,19 @@ button.play {
   color: black;
 }
 
+.delete-movie {
+  cursor: pointer;
+}
+
+.trailer-player {
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 16/9;
+  position: fixed;
+}
+
 @keyframes loading {
   from {
     transform: rotate(0turn);
@@ -223,5 +243,3 @@ button.play {
     transform: rotate(1.5turn);
   }
 }
-
-
