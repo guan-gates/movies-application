@@ -208,28 +208,33 @@ button.play {
   font-size: 20px;
 }
 
-/* NEED A RESOLUTION */
-#addMovieModal {
+.add-movie-popup {
   border: 3px solid black;
+  background-image: url("/img/bg-img.png");
   border-radius: 10px;
   border-top-color: #ccff00;
   border-left-color: #ccff00;
   box-shadow: 12px 12px 2px 1px #192711;
-
-  width: 40%;
-}
-#add-movie-popup {
-  width: 400px;
-  position: fixed;
-  right: 10%;
+  width: 35%;
+  position: absolute;
+  right: -600px;
   top: 50%;
-  transform: translate(50%, -50%);
-  background-color: #eee;
 }
-/* ADDMOVIEMODAL OR ADD-MOVIE-POPUP */
+.moving-left {
+  border: 3px solid black;
+  background-image: url("/img/bg-img.png");
+  border-radius: 10px;
+  border-top-color: #ccff00;
+  border-left-color: #ccff00;
+  box-shadow: 12px 12px 2px 1px #192711;
+  width: 35%;
+  position: absolute;
+  right: 10%;
+  top: 70%;
+}
 
 .input-group {
-  width: 30%;
+  width: 20%;
 }
 .modal-title {
   background-color: black;
@@ -240,28 +245,35 @@ button.play {
   color: #ccff00;
   padding-left: 8px;
 }
-.close {
+.btn-close {
   color: #ccff00;
   float: right;
   font-weight: bold;
   border: unset;
   background-color: black;
 }
-.close:hover,
-.close:focus {
-  color: black;
+.btn-close:hover,
+.btn-close:focus {
+  color: #ccff00;
   text-decoration: none;
   cursor: pointer;
 }
+label.description-text {
+  width: 100%;
+}
 #save-changes {
-  margin-bottom: 10px;
   margin-right: 10px;
   width: 40%;
   font-weight: bold;
 }
+/*.input-group {*/
+/*  margin: 5px 5px;*/
+/*}*/
+
 .input-group-text {
   background-color: #ccff00;
   border: 2px solid black;
+  font-weight: bold;
 }
 .form-range {
   color: #ccff00;
