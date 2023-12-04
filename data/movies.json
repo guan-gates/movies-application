@@ -1,3 +1,37 @@
 {
-  "movies": []
+  "movies": [
+    {
+      "genre": [
+        "doctor",
+        "doctor2",
+        "doctor3"
+      ],
+      "imgSRC": "http://localhost/myimgSRC",
+      "rating": 1,
+      "title": "doctor1",
+      "id": 1
+    },
+    {
+      "genre": [
+        "doctor",
+        "doctor2",
+        "doctor3"
+      ],
+      "imgSRC": "http://localhost/myimgSRC",
+      "rating": 1,
+      "title": "doctor2",
+      "id": 2
+    },
+    {
+      "genre": [
+        "doctor",
+        "doctor2",
+        "doctor3"
+      ],
+      "imgSRC": "http://localhost/myimgSRC",
+      "rating": 1,
+      "title": "doctor3",
+      "id": 3
+    }
+  ]
 }

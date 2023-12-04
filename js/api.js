@@ -1,17 +1,11 @@
 import { keys } from "./keys.js";
 
 export const getMovies = async (searchInput) => {
-
-  // if search by movie title 
+  // if search by movie title
 
   let url1 = `https://api.themoviedb.org/3/search/movie?query=${searchInput}&include_adult=false&language=en-US&page=1`;
 
   let url2 = `https://api.themoviedb.org/3/trending/all/day?language=en-US`;
-
-  let url3 = 
-
-
-
 
   const options = {
     method: "GET",
@@ -50,12 +44,8 @@ export const deleteMovie = async (id) => {
   return data;
 };
 
-export const postMovie = async ({ title, year }) => {
-  const newMovie = {
-    title,
-    year,
-  };
-  const body = JSON.stringify(newMovie);
+export const postMovie = async (movie) => {
+  const body = JSON.stringify(movie);
 
   const url = `http://localhost:3000/movies`;
   const options = {
@@ -118,7 +108,21 @@ export const dbGetMovieTrailerID = async (id) => {
   // // const src =
   // return trailerKey;
 };
+export const addMovieTrailerIDtoMovies = async (movies) => {
+  movies.forEach(async (movie) => {
+    let trailerKey = (await dbGetMovieTrailerID(movie.movieId)) || "NOT_FOUND";
 
+    if (trailerKey !== "NOT_FOUND") {
+      trailerKey = `https://www.youtube.com/watch?v=${trailerKey}`;
+    }
+    movie.trailerSRC = trailerKey;
+
+    // for the convinence, randomly generate ratings for each movie
+    movie.rating = Math.floor(Math.random() * 10) + 1;
+  });
+
+  return movies;
+};
 // fetch trending movies
 export const dbGetTrendingMovies = async () => {
   const url = `https://api.themoviedb.org/3/trending/all/day?language=en-US`;
@@ -147,7 +151,7 @@ export const dbGetTrendingMovies = async () => {
       trendingMovies.push(trendingMovie);
     }
 
-    return trendingMovies;
+    return await addMovieTrailerIDtoMovies(trendingMovies);
   } catch (err) {
     console.log(err);
   }
@@ -180,4 +184,41 @@ const dbConvertMovieGenre = (genreIDs) => {
   const newGenres = genreIDs.map((id) => genres[id]);
 
   return newGenres;
+};
+
+// search for movies by keywords
+export const dbGetMoviesByKeywords = async (keywords) => {
+  const url = `https://api.themoviedb.org/3/search/movie?query=${keywords}`;
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${keys.accessToken}`,
+    },
+  };
+
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+    const movies = data.results;
+
+    let keywordsMovies = [];
+    for (let movie of movies) {
+      let keywordsMovie = {};
+      keywordsMovie.title = movie.title || movie.name;
+      keywordsMovie.movieId = movie.id;
+      keywordsMovie.imgSRC = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+      keywordsMovie.year = movie.release_date || movie.first_air_date;
+      keywordsMovie.year = keywordsMovie.year.slice(0, 4);
+      keywordsMovie.genre = dbConvertMovieGenre(movie.genre_ids);
+      keywordsMovies.push(keywordsMovie);
+    }
+
+    let keywordsMoviesWithTrailID = await addMovieTrailerIDtoMovies(
+      keywordsMovies
+    );
+    return keywordsMoviesWithTrailID;
+  } catch (err) {
+    console.log(err);
+  }
 };
