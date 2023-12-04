@@ -80,9 +80,3 @@ const handlePlayTrailer = (e) => {
 
   // window.addEventListener("click", closePlayer);
 })();
-
-
-
-/// just add something to the working tree
-
-add something to the working tree!. Delete this !!!!
