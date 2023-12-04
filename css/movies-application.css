@@ -292,10 +292,11 @@ button.play {
 }
 
 #add-movie-popup {
+  width: 400px;
   position: fixed;
-  left: 50%;
+  right: 10%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(50%, -50%);
   background-color: #eee;
 }
 
