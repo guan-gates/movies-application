@@ -45,6 +45,17 @@ export const deleteMovie = async (id) => {
 };
 
 export const postMovie = async (movie) => {
+  movie.trailerSRC = await dbGetMovieTrailerID(movie.movieId);
+  movie.rating = Math.floor(Math.random() * 10) + 1;
+  // const newMovie = {
+  //   title: movie.title,
+  //   movieId: movie.movieId,
+  //   imgSRC: movie.imgSRC,
+  //   year: movie.year,
+  //   genre: movie.genre,
+  //   trailerSRC: movie.trailerSRC,
+  // };
+
   const body = JSON.stringify(movie);
 
   const url = `http://localhost:3000/movies`;
@@ -81,7 +92,7 @@ export const patchMovie = async (movie) => {
 
 // fetch movie trailer ID
 export const dbGetMovieTrailerID = async (id) => {
-  const url = `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`;
+  const url = `https://api.themoviedb.org/3/movie/${id}/videos`;
 
   const options = {
     method: "GET",
@@ -94,10 +105,19 @@ export const dbGetMovieTrailerID = async (id) => {
   try {
     const response = await fetch(url, options);
     const data = await response.json();
-    const results = data.results;
-    const key = results[results.length - 1].key;
 
-    return key;
+    const results = data.results;
+
+    let imgSRC;
+
+    if (results.length.length !== 0) {
+      const key = results[results.length - 1].key;
+      imgSRC = `https://www.youtube.com/embed/${key}`;
+    } else {
+      imgSRC = `UNKNOWN`;
+    }
+
+    return imgSRC;
   } catch (err) {
     console.log(err);
   }
@@ -106,7 +126,7 @@ export const dbGetMovieTrailerID = async (id) => {
   // // const src =
   // return trailerKey;
 };
-export const addMovieTrailerIDtoMovies = async (movies) => {
+export const addTrailerIDandReviewtoMovies = async (movies) => {
   movies.forEach(async (movie) => {
     let trailerKey = (await dbGetMovieTrailerID(movie.movieId)) || "NOT_FOUND";
 
@@ -212,10 +232,7 @@ export const dbGetMoviesByKeywords = async (keywords) => {
       keywordsMovies.push(keywordsMovie);
     }
 
-    let keywordsMoviesWithTrailID = await addMovieTrailerIDtoMovies(
-      keywordsMovies
-    );
-    return keywordsMoviesWithTrailID;
+    return keywordsMovies;
   } catch (err) {
     console.log(err);
   }
