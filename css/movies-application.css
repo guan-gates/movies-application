@@ -156,7 +156,7 @@ div.hero {
 }
 
 .yellow-font,
-i.bi-calendar3 {
+.bi-calendar3 {
   color: #ccff00;
 }
 
@@ -241,8 +241,17 @@ button.play {
   cursor: pointer;
 }
 
-.trailer-player {
-  width: 40%;
+.trailer-player-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+#player-container iframe {
+  width: 600px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -298,6 +307,16 @@ button.play {
   top: 50%;
   transform: translate(50%, -50%);
   background-color: #eee;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  width: 50px;
+}
+.carousel-inner {
+  padding: 0 50px;
+}
+.movie-card {
+  position: relative;
 }
 
 @keyframes loading {
