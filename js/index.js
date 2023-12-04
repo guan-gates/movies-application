@@ -1,4 +1,5 @@
 import {
+  getMovie,
   dbGetMoviesByKeywords,
   dbGetTrendingMovies,
   addTrailerIDandReviewtoMovies,
@@ -7,76 +8,91 @@ import {
 } from "./api.js";
 
 const renderCard = (movie) => {
+  const parentNode = document.querySelector("#movie-cards");
   const newElement = document.createElement("div");
   newElement.classList.add("movie-card");
-  newElement.setAttribute("movieid", movie.movieid);
+  newElement.setAttribute("movieid", `${movie.movieId}`);
   newElement.innerHTML = `
-  <img
-    src="${movie.imgSRC}"
-    class="d-block"
-    alt="First slide"
-  />
-  <div
-    class="movie-info d-flex justify-content-between px-1 my-2"
-  >
-    <div id="movie-title" class="me-5">
-      ${movie.title}
-    </div>
-    <div id="movie-year" class="flex-grow-1">${movie.year}</div>
-    <button class="play me-2">
-      <i class="bi bi-play-fill play-movie-card"></i>
-    </button>
-    <i class="bi bi-trash3-fill small delete-movie"></i>
-  </div>
-  <!--     ANCHOR LINK TO NEXT PAGE FOR MOVIE PLAY-->
-  <div class="movie-play d-flex movie-info">
+    <img
+      src="${movie.imgSRC}"
+      class="d-block"
+      alt="First slide"
+    />
     <div
-      id="rating"
-      class="col-12 d-flex justify-content-between gap-3 align-items-center"
+      class="movie-info d-flex justify-content-between px-1 my-2"
     >
-      Rating:
+      <div id="movie-title" class="me-5">
+        ${movie.title}
+      </div>
+      <div id="movie-year" class="flex-grow-1">${movie.year}</div>
+      <button class="play me-2">
+        <i class="bi bi-play-fill play-movie-card"
+        trailersrc="${movie.trailerSRC}"></i>
+      </button>
+      <i class="bi bi-trash3-fill small delete-movie"></i>
+    </div>
+    <!--     ANCHOR LINK TO NEXT PAGE FOR MOVIE PLAY-->
+    <div class="movie-play d-flex movie-info">
       <div
-        class="progress flex-grow-1"
-        role="progressbar"
-        aria-label="Success example"
-        aria-valuenow="90"
-        aria-valuemin="0"
-        aria-valuemax="100"
+        id="rating"
+        class="col-12 d-flex justify-content-between gap-3 align-items-center"
       >
+        Rating:
         <div
-          class="progress-bar bg-success"
-          style="width: 90%"
-          id="rating-bar"
-          value="10"
+          class="progress flex-grow-1"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="90"
+          aria-valuemin="0"
+          aria-valuemax="100"
         >
-          10/10
+          <div
+            class="progress-bar bg-success"
+            style="width: ${movie.rating}0%"
+            id="rating-bar"
+            value="${movie.rating}"
+          >
+          ${movie.rating}/10
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
-  
-  
   `;
+
+  const playBTN = newElement.querySelector(".play-movie-card");
+  console.log(playBTN);
+  playBTN.addEventListener("click", (e) => {
+    console.log(playBTN);
+    handlePlayTrailer(e);
+  });
+
+  parentNode.appendChild(newElement);
 };
 
 const handlePlayTrailer = (e) => {
   const trailerSRC = e.target.getAttribute("trailersrc");
-  let trailerPlayer = document.querySelector(`iframe`);
-  trailerPlayer.src = trailerSRC;
-  trailerPlayer.classList.toggle("d-none");
+  let playerContainer = document.querySelector("#player-container");
+
+  playerContainer.innerHTML = `
+    <div class="trailer-player-bg"></div>
+    <iframe class="trailer-player" src="${trailerSRC}"></iframe>
+  `;
+  const closeBtn = playerContainer.querySelector(".trailer-player-bg");
+  closeBtn.addEventListener("click", () => {
+    playerContainer.innerHTML = "";
+  });
 };
 
 (async () => {
-  //!!!Do not delete!!! The following codes are successful.
-  // let movies = await dbGetMoviesByKeywords("wonka");
+  // !!!Do not delete!!! The following codes are successful.
+  // let movies = await dbGetMoviesByKeywords("avengers");
   // movies.forEach(async (movie) => {
   //   await postMovie(movie);
   // });
-  const playBTN = document.querySelector(".play-movie-card");
-  playBTN.addEventListener("click", (e) => {
-    handlePlayTrailer(e);
-  });
 
-  // window.addEventListener("click", closePlayer);
+  const movie8 = await getMovie("3");
+  const movie1 = await getMovie("4");
+  [movie8, movie1].forEach((movie) => {
+    renderCard(movie);
+  });
 })();

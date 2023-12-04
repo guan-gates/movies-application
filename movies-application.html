@@ -123,6 +123,7 @@
             </div>
 
             <div class="d-flex justify-content-between mb-3">
+
             <div class="d-flex upcomming-types">
               <button class="upcomming-type">Action</button>
               <button class="upcomming-type">Comedy</button>
@@ -137,64 +138,19 @@
               + Add Movie
             </button>
 
+
             </div>
-        </div>
+          </div>
         </div>
       </section>
       <!-- CAROUSEL BEGIN  this section contains all local movies that user likes  -->
       <main class="container favorite-movies">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active d-flex gap-4">
+            <div class="carousel-item active d-flex gap-4" id="movie-cards">
               <!--                START OF FIRST SLIDE MOVIE DEMO     -->
               <!--                  FIRST DUMMY CARD  -->
-              <div class="movie-card" movieid="787699">
-                <img
-                  src="https://image.tmdb.org/t/p/w500/qhb1qOilapbapxWQn9jtRCMwXJF.jpg"
-                  class="d-block"
-                  alt="First slide"
-                />
-                <div
-                  class="movie-info d-flex justify-content-between px-1 my-2"
-                >
-                  <div id="movie-title" class="me-5">Wonka</div>
-                  <div id="movie-year" class="flex-grow-1">2023</div>
-                  <button
-                    class="play me-2">
-                    <i
-                      class="bi bi-play-fill play-movie-card"
-                      trailersrc="https://www.youtube.com/embed/otNh9bTjXWg"
-                    ></i>
-                  </button>
-                  <i class="bi bi-trash3-fill small delete-movie"></i>
-                </div>
-                <!--     ANCHOR LINK TO NEXT PAGE FOR MOVIE PLAY-->
-                <div class="movie-play d-flex movie-info">
-                  <div
-                    id="rating"
-                    class="col-12 d-flex justify-content-between gap-3 align-items-center"
-                  >
-                    Rating:
-                    <div
-                      class="progress flex-grow-1"
-                      role="progressbar"
-                      aria-label="Success example"
-                      aria-valuenow="90"
-                      aria-valuemin="0"
-                      aria-valuemax="100"
-                    >
-                      <div
-                        class="progress-bar bg-success"
-                        style="width: 20%"
-                        id="rating-bar"
-                        value="10"
-                      >
-                        2/10
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
           <button
@@ -237,9 +193,7 @@
       </main>
 
       <!-- Start of Trailer Player -->
-
-      <iframe class="trailer-player d-none" src="#">hello</iframe>
-
+      <div class="row" id="player-container"></div>
       <!-- End of Trailer Player -->
     </div>
 
@@ -248,6 +202,7 @@
       <div class="row moving-left-add add-movie-popup">
         <div class="modal-fade p-0 w-100" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
+
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">
