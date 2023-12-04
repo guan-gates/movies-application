@@ -1,203 +1,323 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Title</title>
+<head>
+    <title>Home Page</title>
     <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS v5.2.1 -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="/css/movies-application.css" />
-  </head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/movies-application.css">
+</head>
 
-  <body>
-    <div class="page-wrapper">
-      <header class="container">
+<body>
+<!--  REQUIRED LOADER -->
+<!--    <div class="loader"></div>-->
+<!--  LOADER END -->
+<div class="page-wrapper">
+
+    <header class="container">
         <div class="row align-items-center">
-          <div class="column col-2 mb-5">
-            <div class="d-flex">
-              <img src="img/logo.png" alt="" />
-              <h2 class="company">Filmagnet</h2>
+            <div class="column col-sm-6 col-md-4 ">
+                <div class="d-flex">
+                    <img src="img/logo.png" alt="Filmagnet Logo">
+                    <h2 class="company">Filmagnet</h2>
+                </div>
             </div>
-          </div>
-          <div class="column col-7 mb-5">
-            <ul class="d-flex justify-content-lg-between">
-              <li><a href="#">home</a></li>
-              <li><a href="#">movie</a></li>
-              <li><a href="#">tv show</a></li>
-              <li><a href="#">web series</a></li>
-              <li><a href="#">premium</a></li>
-            </ul>
-          </div>
-          <div class="column col-3 mb-5">
-            <div class="d-flex justify-content-evenly gap-1 align-items-center">
-              <i class="bi bi-search"></i>
-              <div class="d-flex gap-3">
-                <i class="bi bi-globe-americas"></i>
-                <select name="language" id="language">
-                  <option value="EN">EN</option>
-                  <option value="CN">CN</option>
-                  <option value="KR">KR</option>
-                  <option value="SP">SP</option>
-                </select>
-              </div>
-              <button class="sign-in">Sign In</button>
-            </div>
-          </div>
-          <div class="hero column col-5 gap-3">
-            <h2 class="yellow-font">Filmagnet</h2>
-            <h1>
-              Unlimited <span class="yellow-font">Entertainment</span>, Movies,
-              TVs shows, & More.
-            </h1>
-            <div class="d-flex justify-content-start gap-4 booking">
-              <span class="movie-span">Movie</span>
-              <span class="hd-span">HD</span>
-              <span id="genere">Action, Drama</span>
-              <div class="d-flex calendar" id="calendar">
-                <a href="#"><i class="bi bi-calendar3"> 2023</i></a>
-              </div>
-            </div>
-            <button
-              class="play d-flex w-25 align-items-center justify-content-around"
-            >
-              <i class="bi bi-play-fill"></i>
-              <span>Play Now</span>
-            </button>
-          </div>
-        </div>
-      </header>
 
-      <main class="container mt-5">
-        <div class="row">
-          <div class="column">
-            <a href="#" class="streaming mb-3">online streaming</a>
-            <div class="d-flex justify-content-between mb-3">
-              <h3>Upcoming Movies</h3>
-              <div class="d-flex upcomming-types">
-                <button class="upcomming-type">Movies</button>
-                <button class="upcomming-type">TV Shows</button>
-                <button class="upcomming-type">Anime</button>
-              </div>
+            <div class="column col-sm-6 col-md-4 ">
+                <ul class="d-flex ">
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">movie</a></li>
+                    <li><a href="#">shows</a></li>
+                </ul>
             </div>
-            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner" role="listbox">
+
+            <div class="column col-sm-12 col-md-4 ">
+                <div class="d-flex justify-content-evenly gap-1 align-items-center">
+                    <i class="bi bi-search"></i>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <div class="d-flex gap-3">
+                        <i class="bi bi-globe-americas"></i>
+                        <label for="language">
+                            <select name="language" id="language">
+                                <option value="EN">EN</option>
+                                <option value="CN">CN</option>
+                                <option value="KR">KR</option>
+                                <option value="SP">SP</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button class="sign-in">Sign In</button>
+                </div>
+            </div>
+
+            <div class="hero column gap-3">
+                <h1 class="yellow-font">Filmagnet</h1>
+                <h2>
+                    Unlimited <span class="yellow-font">Entertainment</span>, Movies, TVs shows, & More.
+                </h2>
+                <div class="d-flex justify-content-start gap-4 booking">
+                    <span class="movie-span">Movie</span>
+                    <span class="hd-span">HD</span>
+                    <span id="genere">Action, Drama</span>
+                    <div class="d-flex calendar" id="calendar">
+                        <!--        LINK TO MOVIE THEATER SEARCH-->
+                        <a href="https://drafthouse.com/san-antonio/theater/park-north"><i class="bi bi-calendar3">Movie Theater Times</i></a>
+                    </div>
+                </div>
+                <button class="play d-flex w-25 align-items-center justify-content-around">
+                    <i class="bi bi-play-fill"></i>
+                    <span>Play Now</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="container mt-5">
+        <div class="row d-flex">
+            <div class="column">
+                <a href="#" class="streaming mb-3">online streaming</a>
+                <div class="d-flex justify-content-start mb-3">
+                    <h3>Upcoming Movies</h3>
+                    <div class="dropdown-center">
+                        <button class="upcomming-type dropdown-toggle mx-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Filter
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" aria-current="true" href="#">Sort by Title</a></li>
+                            <li><a class="dropdown-item" href="#">Sort by Year</a></li>
+                            <li><a class="dropdown-item" href="#">Sort by Rating</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <div class="d-flex justify-content-between mb-3">
+                    <div class="d-flex upcomming-types">
+                        <button class="upcomming-type">Movies</button>
+                        <button class="upcomming-type">TV Shows</button>
+                        <button class="upcomming-type">Anime</button>
+                    </div>
+
+                    <button type="button" class="upcomming-type" data-toggle="modal" data-target="#modalCenter">+ Add Movie
+                    </button>
+
+                    <div class="modal-fade" id="addMovieModal" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalTitle">Add Movie
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                        </button></h5>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="">
+                                        <!--                                        movie title start-->
+                                        <div class="row mt-3">
+                                            <div class="col px-4">
+                                                <h6>Movie Title</h6>
+                                                <label>
+                                                    <input type="text" placeholder="Movie Title">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!--                                        movie title end -->
+                                        <!--                                        movie year start-->
+                                        <div class="row mt-3">
+                                            <div class="col px-4">
+                                                <h6>Movie Year</h6>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <label>
+                                                    <input type="text" placeholder="Movie Year">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!--                                        movie year end -->
+                                        <!--                                        movie description start -->
+                                        <div class="row mt-3">
+                                            <div class="col px-4">
+                                                <h6>Description</h6>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col px-4">
+                                                <label class="description-text">
+                                                    <textarea rows="5" cols="60"></textarea>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <!--                                        movie description end-->
+                                    </form>
+                                    <div class="row">
+                                        <div class="input-group mb-3 px-3 justify-content-center">
+                                            <div class="input-group-text">
+                                                <input class="form-check-input mt-0" type="checkbox" value="Action" aria-label="Checkbox for following text input">Action
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3 px-3">
+                                            <div class="input-group-text">
+                                                <input class="form-check-input mt-0" type="checkbox" value="Comedy" aria-label="Checkbox for following text input">Comedy
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3 px-3">
+                                            <div class="input-group-text">
+                                                <input class="form-check-input mt-0" type="checkbox" value="Adventure" aria-label="Checkbox for following text input">Adventure
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3 px-3 justify-content-center">
+                                            <div class="input-group-text">
+                                                <input class="form-check-input mt-0" type="checkbox" value="Drama" aria-label="Checkbox for following text input">Drama
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3 px-3">
+                                            <div class="input-group-text">
+                                                <input class="form-check-input mt-0" type="checkbox" value="Family" aria-label="Checkbox for following text input">Family
+                                            </div>
+                                        </div>
+                                        <div class="input-group mb-3 px-3">
+                                            <div class="input-group-text">
+                                                <input class="form-check-input mt-0" type="checkbox" value="Sci-Fi" aria-label="Checkbox for following text input">Sci-Fi
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="customRange2" class="form-label">Rating
+                                            <input type="range" class="form-range" min="0" max="5" id="customRange2">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+
+
+                                    <button type="button" class="btn btn-primary">Save Changes
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CAROUSEL BEGIN   -->
+    <main class="container">
+
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active d-flex gap-4">
-                  <div class="movie-card">
-                    <img
-                      src="/img/movie-demo.png"
-                      class="d-block"
-                      alt="First slide"
-                    />
-                    <div
-                      class="movie-info d-flex justify-content-between px-1 my-2"
-                    >
-                      <div id="movie-title">Free Guy</div>
-                      <div id="movie-year">2023</div>
-                    </div>
-                    <div class="movie-play d-flex justify-content-evenly">
-                      <button class="play me-2">
-                        <i class="bi bi-play-fill play-movie-card"
-                          ><a href="#"></a
-                        ></i>
-                      </button>
-                      <a href="#"><i class="bi bi-calendar3"> 2023</i></a>
-                      <i class="bi bi-clock-fill" id="lapse">130min</i>
-                    </div>
-                  </div>
 
-                  <img
-                    src="/img/movie-demo.png"
-                    class="d-block"
-                    alt="First slide"
-                  />
-                  <img
-                    src="/img/movie-demo.png"
-                    class="d-block"
-                    alt="First slide"
-                  />
-                  <img
-                    src="/img/movie-demo.png"
-                    class="d-block"
-                    alt="First slide"
-                  />
+                    <!--                START OF FIRST SLIDE MOVIE DEMO     -->
+                    <!--                  FIRST DUMMY CARD  -->
+                    <div class="movie-card">
+                        <img src="/img/movie-demo.png" class="d-block" alt="First slide">
+                        <div class="movie-info d-flex justify-content-between px-1 my-2">
+                            <div id="movie-title">Free Guy</div>
+                            <div id="movie-year">2023</div>
+                            <i class="bi bi-clock-fill" id="lapse">130min</i>
+                        </div>
+                        <!--     ANCHOR LINK TO NEXT PAGE FOR MOVIE PLAY-->
+                        <div class="movie-play d-flex movie-info">
+                            <div class="col-6">
+                                <button class="play me-2">
+                                    <i class="bi bi-play-fill play-movie-card"></i>
+                                    <a href=./play-trailer.html>Trailer</a>
+                                </button>
+                            </div>
+                            <div id="rating" class="col-6">Rating:
+                                <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar bg-success" style="width: 90%">9/10</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel-item">
-                  <div class="card">
-                    <div class="card card-img-top"></div>
-                  </div>
-                  <img
-                    src="/img/movie-demo.png"
-                    class="d-block"
-                    alt="Second slide"
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="/img/movie-demo.png"
-                    class="d-block"
-                    alt="Third slide"
-                  />
-                </div>
-              </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#carouselId"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#carouselId"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
-          </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <!--           FIRST DUMMY CARD END  -->
+
+            <!--                  <img src="/img/movie-demo.png" class="d-block" alt="First slide">-->
+            <!--                  <img src="/img/movie-demo.png" class="d-block" alt="First slide">-->
+            <!--                  <img src="/img/movie-demo.png" class="d-block" alt="First slide">-->
+            <!--                </div>-->
+            <!--                END OF FIRST SLIDE MOVIE DEMO     -->
+            <!--                START OF SECOND SLIDE MOVIE DEMO     -->
+            <!--                <div class="carousel-item">-->
+            <!--                  <div class="card">-->
+            <!--                    <div class="card card-img-top"></div>-->
+            <!--                  </div>-->
+            <!--                  <img src="/img/movie-demo.png" class="d-block" alt="Second slide">-->
+            <!--                </div>-->
+            <!--                <div class="carousel-item">-->
+            <!--                  <img src="/img/movie-demo.png" class="d-block" alt="Third slide">-->
+            <!--                </div>-->
+            <!--              </div>-->
+
         </div>
-      </main>
-      <footer>
-        <!-- place footer here -->
-      </footer>
-      <!-- Bootstrap JavaScript Libraries -->
+    </main>
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+</div>
+<footer class="footer">
+    <div class="row mb-3 pt-3">
+        <h3>Get updated when we tell you our next favorite movie!!</h3>
+    </div>
+    <div class="row">
+        <div class="mb-2">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+
+        <div id="emailHelp" class="form-text-footer mb-3">We'll never share your email with anyone else.
+        </div>
+
+        <span><input type="checkbox" class="checkbox mb-5" required>By clicking the box, you agree that movies are great and Jason should give us a 100!</span>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+    <div class="mb-3 mt-3 d-flex flex-row justify-content-start">
+        <a target="_blank" href="https://www.youtube.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_15557_122208)"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.109 13.6882L11.1081 5.69867L18.6734 9.7072L11.109 13.6882ZM27.72 4.31421C27.72 4.31421 27.4461 2.35482 26.607 1.49198C25.5421 0.359 24.3486 0.353668 23.8017 0.287911C19.8835 3.61067e-07 14.0061 0 14.0061 0H13.9939C13.9939 0 8.1165 3.61067e-07 4.19825 0.287911C3.6505 0.353668 2.45787 0.359 1.39212 1.49198C0.553 2.35482 0.28 4.31421 0.28 4.31421C0.28 4.31421 0 6.61572 0 8.91634V11.0739C0 13.3754 0.28 15.676 0.28 15.676C0.28 15.676 0.553 17.6354 1.39212 18.4982C2.45787 19.6312 3.857 19.5957 4.48 19.7139C6.72 19.9325 14 20 14 20C14 20 19.8835 19.9911 23.8017 19.7032C24.3486 19.6366 25.5421 19.6312 26.607 18.4982C27.4461 17.6354 27.72 15.676 27.72 15.676C27.72 15.676 28 13.3754 28 11.0739V8.91634C28 6.61572 27.72 4.31421 27.72 4.31421Z" fill="#EAE8E1"></path></g><defs><clipPath id="clip0_15557_122208"><rect width="28" height="20" fill="white"></rect></clipPath></defs></svg><span style="display: none;" class="ae-compliance-indent"> YouTube Video </span></a>
+        <a target="_blank" href="https://www.pinterest.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17t4vlu" focusable="false" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_15557_122212)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.0006 0C4.47816 0 0 4.47698 0 10.0006C0 14.0942 2.46252 17.6127 5.98695 19.1592C5.95872 18.4618 5.98224 17.6222 6.15982 16.8625C6.35268 16.051 7.44635 11.4141 7.44635 11.4141C7.44635 11.4141 7.12765 10.7756 7.12765 9.83125C7.12765 8.3495 7.9873 7.2429 9.05627 7.2429C9.96531 7.2429 10.4051 7.92615 10.4051 8.74463C10.4051 9.65838 9.82184 11.026 9.52196 12.2926C9.27148 13.3545 10.0535 14.2189 11.1001 14.2189C12.9946 14.2189 14.2706 11.7857 14.2706 8.90222C14.2706 6.71135 12.7947 5.07085 10.11 5.07085C7.07709 5.07085 5.18728 7.33227 5.18728 9.85829C5.18728 10.7309 5.44364 11.3447 5.84583 11.8198C6.03163 12.0397 6.05633 12.1268 5.9893 12.3784C5.94226 12.5607 5.83172 13.0052 5.78585 13.1805C5.71882 13.4333 5.5142 13.525 5.28606 13.4309C3.88781 12.8606 3.23749 11.3306 3.23749 9.61016C3.23749 6.77015 5.63297 3.36215 10.384 3.36215C14.2024 3.36215 16.7155 6.12689 16.7155 9.09155C16.7155 13.0146 14.5352 15.9452 11.3189 15.9452C10.2405 15.9452 9.22444 15.3619 8.87634 14.6998C8.87634 14.6998 8.29541 17.0036 8.17311 17.4481C7.96143 18.2184 7.5463 18.9898 7.16646 19.5896C8.06609 19.8554 9.01629 20 10.0006 20C15.523 20 20 15.523 20 10.0006C20 4.47698 15.523 0 10.0006 0Z" fill="#EAE8E1"></path></g><defs><clipPath id="clip0_15557_122212"><rect width="20" height="20" fill="white"></rect></clipPath></defs></svg></svg><span class="ae-compliance-indent" style="display:none;">Pinterest</span></a>
+        <a target="_blank" href="https://twitter.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17t4vlu" focusable="false" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_18277_18215)"><path d="M11.7685 8.5452L18.6896 0.5H17.0496L11.04 7.48554L6.24014 0.5H0.704102L7.96239 11.0634L0.704102 19.5H2.34427L8.69054 12.123L13.7595 19.5H19.2956L11.7681 8.5452H11.7685ZM9.52211 11.1564L8.78669 10.1046L2.93525 1.7347H5.45445L10.1766 8.48944L10.912 9.54132L17.0503 18.3215H14.5311L9.52211 11.1568V11.1564Z" fill="#EAE8E1"></path></g><defs><clipPath id="clip0_18277_18215"><rect width="20" height="20" fill="white"></rect></clipPath></defs></svg></svg><span style="display: none;" class="ae-compliance-indent"> Twitter Social Network </span></a>
+        <a target="_blank" href="https://www.instagram.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17t4vlu" focusable="false" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_15557_122220)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C12.7158 0 13.0564 0.0115117 14.123 0.0601779C15.1874 0.108725 15.9143 0.277786 16.5504 0.525007C17.208 0.780524 17.7656 1.12246 18.3216 1.67839C18.8775 2.23436 19.2195 2.79203 19.475 3.44962C19.7222 4.08569 19.8913 4.81263 19.9398 5.87701C19.9885 6.94362 20 7.28416 20 10C20 12.7158 19.9885 13.0564 19.9398 14.123C19.8913 15.1874 19.7222 15.9143 19.475 16.5504C19.2195 17.208 18.8775 17.7656 18.3216 18.3216C17.7656 18.8775 17.208 19.2195 16.5504 19.475C15.9143 19.7222 15.1874 19.8913 14.123 19.9398C13.0564 19.9885 12.7158 20 10 20C7.28416 20 6.94362 19.9885 5.87701 19.9398C4.81263 19.8913 4.08569 19.7222 3.44962 19.475C2.79203 19.2195 2.23436 18.8775 1.67839 18.3216C1.12246 17.7656 0.780524 17.208 0.525007 16.5504C0.277786 15.9143 0.108724 15.1874 0.0601774 14.123C0.0115112 13.0564 0 12.7158 0 10C0 7.28416 0.0115112 6.94362 0.0601774 5.87701C0.108724 4.81263 0.277786 4.08569 0.525007 3.44962C0.780524 2.79203 1.12246 2.23436 1.67839 1.67839C2.23436 1.12246 2.79203 0.780524 3.44962 0.525007C4.08569 0.277786 4.81263 0.108725 5.87701 0.0601779C6.94362 0.0115117 7.28416 0 10 0ZM10 1.8018C7.32989 1.8018 7.0136 1.812 5.95914 1.86011C4.98415 1.90457 4.45466 2.06748 4.10229 2.20443C3.63551 2.38583 3.30239 2.60253 2.95248 2.95248C2.60253 3.30239 2.38583 3.63551 2.20443 4.10229C2.06748 4.45466 1.90457 4.98415 1.86011 5.95914C1.812 7.0136 1.8018 7.32989 1.8018 10C1.8018 12.6701 1.812 12.9864 1.86011 14.0409C1.90457 15.0158 2.06748 15.5453 2.20443 15.8977C2.38583 16.3645 2.60257 16.6976 2.95248 17.0475C3.30239 17.3975 3.63551 17.6142 4.10229 17.7956C4.45466 17.9325 4.98415 18.0954 5.95914 18.1399C7.01348 18.188 7.32969 18.1982 10 18.1982C12.6703 18.1982 12.9866 18.188 14.0409 18.1399C15.0158 18.0954 15.5453 17.9325 15.8977 17.7956C16.3645 17.6142 16.6976 17.3975 17.0475 17.0475C17.3975 16.6976 17.6142 16.3645 17.7956 15.8977C17.9325 15.5453 18.0954 15.0158 18.1399 14.0409C18.188 12.9864 18.1982 12.6701 18.1982 10C18.1982 7.32989 18.188 7.0136 18.1399 5.95914C18.0954 4.98415 17.9325 4.45466 17.7956 4.10229C17.6142 3.63551 17.3975 3.30239 17.0475 2.95248C16.6976 2.60253 16.3645 2.38583 15.8977 2.20443C15.5453 2.06748 15.0158 1.90457 14.0409 1.86011C12.9864 1.812 12.6701 1.8018 10 1.8018ZM10 4.86487C12.8361 4.86487 15.1351 7.16393 15.1351 10C15.1351 12.8361 12.8361 15.1351 10 15.1351C7.16393 15.1351 4.86487 12.8361 4.86487 10C4.86487 7.16393 7.16393 4.86487 10 4.86487ZM10 13.3333C11.841 13.3333 13.3333 11.841 13.3333 10C13.3333 8.15904 11.841 6.66667 10 6.66667C8.15904 6.66667 6.66667 8.15904 6.66667 10C6.66667 11.841 8.15904 13.3333 10 13.3333ZM16.538 4.66199C16.538 5.32474 16.0008 5.86197 15.338 5.86197C14.6753 5.86197 14.138 5.32474 14.138 4.66199C14.138 3.99924 14.6753 3.46197 15.338 3.46197C16.0008 3.46197 16.538 3.99924 16.538 4.66199Z" fill="#EAE8E1"></path></g><defs><clipPath id="clip0_15557_122220"><rect width="20" height="20" fill="white"></rect></clipPath></defs></svg></svg><span style="display: none;" class="ae-compliance-indent"> Instagram Social Network </span></a>
+        <a target="_blank" href="https://www.facebook.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17t4vlu" focusable="false" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_15557_122224)"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 19.1042C20 19.7138 19.5059 20.2085 18.8962 20.2085H13.7997V12.4633H16.3994L16.789 9.44526H13.7997V7.51782C13.7997 6.64399 14.0427 6.04855 15.2957 6.04855L16.8941 6.048V3.34807C16.6174 3.31157 15.6689 3.22931 14.5651 3.22931C12.2606 3.22931 10.6829 4.63593 10.6829 7.21928V9.44526H8.0766V12.4633H10.6829V20.2085H1.10376C0.49413 20.2085 0 19.7138 0 19.1042V1.31277C0 0.702612 0.49413 0.208496 1.10376 0.208496H18.8962C19.5059 0.208496 20 0.702612 20 1.31277V19.1042Z" fill="#EAE8E1"></path></g><defs><clipPath id="clip0_15557_122224"><rect width="20" height="20" fill="white"></rect></clipPath></defs></svg></svg><span style="display: none;" class="ae-compliance-indent"> Facebook Social Network </span></a>
+        <a target="_blank" href="https://www.tiktok.com/" rel="noopener noreferrer" style="cursor: pointer; margin: 10px 25px 10px 0px; color: rgb(141, 156, 152);" aria-describedby="audioeye_new_window_message"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-17t4vlu" focusable="false" aria-hidden="true"><svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.4079 7.86936V10.86L6.19779 10.8381C5.88736 10.8078 5.57403 10.8366 5.27418 10.9229C4.26775 11.2017 3.55425 11.8263 3.16658 12.8028C2.61509 14.1912 3.16007 15.8698 4.56104 16.6428C5.08756 16.9411 5.69286 17.0683 6.29398 17.0068C7.43457 16.8903 8.3137 16.3429 8.88725 15.3326C9.1404 14.8882 9.23912 14.4012 9.23948 13.8906C9.24117 11.8665 9.2443 9.8426 9.24889 7.81877C9.25419 5.25071 9.2601 2.68278 9.26661 0.11496C9.26661 0.0822038 9.26661 0.0498117 9.26661 0.0192396C9.34255 -0.00114186 11.9658 -0.00769197 12.1159 0.0112336C12.2653 1.28507 12.7835 2.38312 13.7024 3.27808C14.6213 4.17304 15.7225 4.65856 16.9976 4.76775V8.09647C16.045 8.19087 15.085 8.0195 14.2228 7.60113C13.3465 7.18003 12.6388 6.55876 12.0779 5.75115C12.0779 5.78755 12.0754 5.82394 12.0754 5.86252C12.0754 8.17654 12.0754 10.4906 12.0754 12.8046C12.0754 13.1773 12.0776 13.5496 12.0754 13.9223C12.066 15.2846 11.6639 16.5176 10.8397 17.5982C9.93563 18.7862 8.74947 19.5421 7.2939 19.8635C6.81708 19.9702 6.3286 20.0147 5.8405 19.9959C4.41602 19.9388 3.15609 19.45 2.07951 18.5088C1.09732 17.651 0.46012 16.5799 0.158157 15.306C0.0670639 14.9078 0.0154611 14.5015 0.00410276 14.093C-0.0315179 13.1377 0.165246 12.1882 0.57729 11.3269C1.0714 10.2698 1.86017 9.37997 2.84762 8.76578C3.49813 8.35511 4.22142 8.07494 4.97764 7.9407C5.41966 7.86077 5.8695 7.83352 6.31785 7.85953C6.34425 7.85844 6.37282 7.86427 6.4079 7.86936Z" fill="#8D9D99"></path><path d="M6.4079 7.86936V10.86L6.19779 10.8381C5.88736 10.8078 5.57403 10.8366 5.27418 10.9229C4.26775 11.2017 3.55425 11.8263 3.16658 12.8028C2.61509 14.1912 3.16007 15.8698 4.56104 16.6428C5.08756 16.9411 5.69286 17.0683 6.29398 17.0068C7.43457 16.8903 8.3137 16.3429 8.88725 15.3326C9.1404 14.8882 9.23912 14.4012 9.23948 13.8906C9.24117 11.8665 9.2443 9.8426 9.24889 7.81877C9.25419 5.25071 9.2601 2.68278 9.26661 0.11496C9.26661 0.0822038 9.26661 0.0498117 9.26661 0.0192396C9.34255 -0.00114186 11.9658 -0.00769197 12.1159 0.0112336C12.2653 1.28507 12.7835 2.38312 13.7024 3.27808C14.6213 4.17304 15.7225 4.65856 16.9976 4.76775V8.09647C16.045 8.19087 15.085 8.0195 14.2228 7.60113C13.3465 7.18003 12.6388 6.55876 12.0779 5.75115C12.0779 5.78755 12.0754 5.82394 12.0754 5.86252C12.0754 8.17654 12.0754 10.4906 12.0754 12.8046C12.0754 13.1773 12.0776 13.5496 12.0754 13.9223C12.066 15.2846 11.6639 16.5176 10.8397 17.5982C9.93563 18.7862 8.74947 19.5421 7.2939 19.8635C6.81708 19.9702 6.3286 20.0147 5.8405 19.9959C4.41602 19.9388 3.15609 19.45 2.07951 18.5088C1.09732 17.651 0.46012 16.5799 0.158157 15.306C0.0670639 14.9078 0.0154611 14.5015 0.00410276 14.093C-0.0315179 13.1377 0.165246 12.1882 0.57729 11.3269C1.0714 10.2698 1.86017 9.37997 2.84762 8.76578C3.49813 8.35511 4.22142 8.07494 4.97764 7.9407C5.41966 7.86077 5.8695 7.83352 6.31785 7.85953C6.34425 7.85844 6.37282 7.86427 6.4079 7.86936Z" fill="#EAE8E1"></path></svg></svg><span class="ae-compliance-indent" style="display:none;">TikTok</span></a>
+    </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-      crossorigin="anonymous"
-    ></script>
-    <script type="module" src="/js/index.js"></script>
-  </body>
+
+    <div class="row"></div>
+    <div class="row"></div>
+    <div class="row"></div>
+</footer>
+
+
+
+<script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"
+></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"
+></script>
+<script type="module" src="/js/index.js"></script>
+</body>
 </html>
