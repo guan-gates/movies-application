@@ -220,7 +220,31 @@ button.play {
   right: -600px;
   top: 50%;
 }
-.moving-left {
+.moving-left-add {
+  border: 3px solid black;
+  background-image: url("/img/bg-img.png");
+  border-radius: 10px;
+  border-top-color: #ccff00;
+  border-left-color: #ccff00;
+  box-shadow: 12px 12px 2px 1px #192711;
+  width: 35%;
+  position: absolute;
+  right: 10%;
+  top: 70%;
+}
+.edit-movie-popup {
+  border: 3px solid black;
+  background-image: url("/img/bg-img.png");
+  border-radius: 10px;
+  border-top-color: #ccff00;
+  border-left-color: #ccff00;
+  box-shadow: 12px 12px 2px 1px #192711;
+  width: 35%;
+  position: absolute;
+  right: -600px;
+  top: 50%;
+}
+.moving-left-edit {
   border: 3px solid black;
   background-image: url("/img/bg-img.png");
   border-radius: 10px;
@@ -266,9 +290,6 @@ label.description-text {
   width: 40%;
   font-weight: bold;
 }
-/*.input-group {*/
-/*  margin: 5px 5px;*/
-/*}*/
 
 .input-group-text {
   background-color: #ccff00;
