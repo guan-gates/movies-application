@@ -98,8 +98,6 @@ export const dbGetMovieTrailerID = async (id) => {
     const key = results[results.length - 1].key;
 
     return key;
-
-    return key;
   } catch (err) {
     console.log(err);
   }
