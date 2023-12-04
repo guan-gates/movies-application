@@ -38,5 +38,5 @@ const addMovieTrailerIDtoMovie = async (movie) => {
   // const myMovies = await dbGetMoviesByKeywords("doctor");
   // console.log(myMovies);
   //
-  // postMovie is fully functional.
+  // postMovie is fully functional. It will return.
 })();
