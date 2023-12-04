@@ -129,6 +129,17 @@ select {
   }
 }
 
+.form-control-search {
+  width: 70%;
+}
+.btn-outline-success {
+  background-color: var(--yellow);
+  color: black;
+  border-radius: 30px;
+  width: 80px;
+  margin-left: 15px;
+}
+
 button.sign-in {
   background-color: #ccff00;
   border-color: var(--yellow);
@@ -150,8 +161,8 @@ i.bi-calendar3 {
 }
 
 .movie-span {
-  background-color: white;
-  color: black;
+  background-color: none;
+  color: white;
   padding: 0 5px;
   border-radius: 4px;
   border: none;
@@ -221,6 +232,10 @@ button.play {
   background-color: #ccff00;
   color: black;
 }
+.legal-stuff {
+  border-left: 2px solid #ccff00;
+  padding-left: 7px;
+}
 
 .delete-movie {
   cursor: pointer;
@@ -233,6 +248,55 @@ button.play {
   transform: translate(-50%, -50%);
   aspect-ratio: 16/9;
   position: fixed;
+}
+
+.modal-title {
+  background-color: black;
+  border-radius: 5px;
+  height: 10%;
+  width: 100%;
+  font-size: 25pt;
+  color: #ccff00;
+  padding-left: 8px;
+}
+
+.close {
+  color: #ccff00;
+  float: right;
+  font-weight: bold;
+  border: unset;
+  background-color: black;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#save-changes {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 40%;
+  font-weight: bold;
+}
+.input-group-text {
+  background-color: #ccff00;
+  border: 2px solid black;
+}
+.form-range {
+  color: #ccff00;
+  width: 200%;
+}
+.input-group {
+  width: 30%;
+}
+
+#add-movie-popup {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #eee;
 }
 
 @keyframes loading {
