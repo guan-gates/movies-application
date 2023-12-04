@@ -1,34 +1,37 @@
 {
   "movies": [
     {
-      "id": 1,
-      "title": "Shrek",
-      "rating": 5
+      "genre": [
+        "doctor",
+        "doctor2",
+        "doctor3"
+      ],
+      "imgSRC": "http://localhost/myimgSRC",
+      "rating": 1,
+      "title": "doctor1",
+      "id": 1
     },
     {
-      "id": 2,
-      "title": "Shrek2",
-      "rating": 5
+      "genre": [
+        "doctor",
+        "doctor2",
+        "doctor3"
+      ],
+      "imgSRC": "http://localhost/myimgSRC",
+      "rating": 1,
+      "title": "doctor2",
+      "id": 2
     },
     {
-      "id": 3,
-      "title": "Shrek3",
-      "rating": 5
-    },
-    {
-      "id": 4,
-      "title": "Shrek4",
-      "rating": 5
-    }
-    {
-      "id": 3,
-      "title": "Shrek3",
-      "rating": 5
-    },
-    {
-      "id": 5,
-      "title": "",
-      "rating": 1
+      "genre": [
+        "doctor",
+        "doctor2",
+        "doctor3"
+      ],
+      "imgSRC": "http://localhost/myimgSRC",
+      "rating": 1,
+      "title": "doctor3",
+      "id": 3
     }
   ]
 }
