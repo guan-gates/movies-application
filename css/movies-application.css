@@ -208,48 +208,29 @@ button.play {
   font-size: 20px;
 }
 
-.carousel-item img {
-  width: 200px;
-}
+/* NEED A RESOLUTION */
+#addMovieModal {
+  border: 3px solid black;
+  border-radius: 10px;
+  border-top-color: #ccff00;
+  border-left-color: #ccff00;
+  box-shadow: 12px 12px 2px 1px #192711;
 
-.footer {
-  background-color: black;
-  color: var(--yellow);
-  width: 100%;
-  height: 100dvh;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.form-text-footer {
-  color: var(--yellow);
-}
-.form-control {
-  width: 20%;
-  background-color: antiquewhite;
-}
-#submit-btn {
-  border-radius: 10%;
-  background-color: #ccff00;
-  color: black;
-}
-.legal-stuff {
-  border-left: 2px solid #ccff00;
-  padding-left: 7px;
-}
-
-.delete-movie {
-  cursor: pointer;
-}
-
-.trailer-player {
   width: 40%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  aspect-ratio: 16/9;
-  position: fixed;
 }
+#add-movie-popup {
+  width: 400px;
+  position: fixed;
+  right: 10%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  background-color: #eee;
+}
+/* ADDMOVIEMODAL OR ADD-MOVIE-POPUP */
 
+.input-group {
+  width: 30%;
+}
 .modal-title {
   background-color: black;
   border-radius: 5px;
@@ -259,7 +240,6 @@ button.play {
   color: #ccff00;
   padding-left: 8px;
 }
-
 .close {
   color: #ccff00;
   float: right;
@@ -287,18 +267,49 @@ button.play {
   color: #ccff00;
   width: 200%;
 }
-.input-group {
-  width: 30%;
+.carousel-item img {
+  width: 200px;
 }
 
-#add-movie-popup {
-  width: 400px;
-  position: fixed;
-  right: 10%;
-  top: 50%;
-  transform: translate(50%, -50%);
-  background-color: #eee;
+.footer {
+  background-color: black;
+  color: var(--yellow);
+  width: 100%;
+  height: 100dvh;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+.form-text-footer {
+  color: var(--yellow);
+}
+.form-control {
+  width: 20%;
+  background-color: whitesmoke;
+}
+#submit-btn {
+  border-radius: 10%;
+  background-color: #ccff00;
+  color: black;
+}
+.legal-stuff {
+  border-left: 2px solid #ccff00;
+  padding-left: 7px;
+}
+
+.delete-movie {
+  cursor: pointer;
+}
+
+.trailer-player {
+  width: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 16/9;
+  position: fixed;
+}
+
+
 
 @keyframes loading {
   from {
