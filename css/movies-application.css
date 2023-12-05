@@ -88,9 +88,9 @@ a {
 
 header.container {
   background-image: url("https://image.tmdb.org/t/p/w500//m3tdSyl11fhgXPDSEt3aBctTqGP.jpg");
-
   background-repeat: no-repeat;
   background-size: cover;
+  height: 450px;
 }
 
 .company {
@@ -131,6 +131,11 @@ select {
 
 .form-control-search {
   width: 70%;
+  border-radius: 5px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
 }
 .btn-outline-success {
   background-color: var(--yellow);
@@ -389,7 +394,7 @@ label.description-text {
   width: 100%;
   overflow-x: auto; /* Enable horizontal scrolling */
   white-space: nowrap; /* Prevent images from wrapping to the next line */
-  height: 550px;
+  height: 410px;
 }
 
 /* Style the individual image divs */
@@ -400,13 +405,17 @@ label.description-text {
   & i {
     cursor: pointer;
   }
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 /* Style the images */
 .gallery-item img {
-  max-width: 280px; /* Set a fixed width for the images */
+  max-width: 200px; /* Set a fixed width for the images */
   height: auto; /* Maintain aspect ratio */
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .likemovie {

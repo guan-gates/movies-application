@@ -150,8 +150,6 @@ const renderCard = (movie) => {
 
 // render movie those movies cards for user to pick from
 const renderTemperaryCard = (movie) => {
-  const parentNode = document.querySelector("#display-search-results");
-
   const newElement = document.createElement("div");
   if (movie.title.length > 15) {
     movie.title = movie.title.slice(0, 12) + "...";
@@ -183,7 +181,15 @@ trailersrc="${movie.trailerSRC}"></i>
     await postMovie(movie);
   });
 
-  parentNode.appendChild(newElement);
+  return newElement;
+};
+const renderTemperayCards = (movies) => {
+  const parentNode = document.querySelector("#display-search-results");
+  parentNode.innerHTML = ` <h2>Search Results:</h2>`;
+  movies.forEach((movie) => {
+    let newElement = renderTemperaryCard(movie);
+    parentNode.appendChild(newElement);
+  });
 };
 
 const displayLikeMovies = async () => {
@@ -215,12 +221,11 @@ const displayLikeMovies = async () => {
   const searchMovies = document.querySelector("#search-movies");
   searchMovies.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const displaySection = document.querySelector("#display-search-results");
+    displaySection.classList.remove("d-none");
     const keywords = searchMovies.querySelector("input").value;
     let results = await dbGetMoviesByKeywords(keywords);
-    console.log(results);
-    results.forEach((movie) => {
-      renderTemperaryCard(movie);
-    });
+    renderTemperayCards(results);
   });
 
   //display all the liked movies

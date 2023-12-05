@@ -73,7 +73,7 @@
             </div>
           </div>
 
-          <div class="hero column gap-3">
+          <div class="hero column gap-2">
             <h1 class="yellow-font">Filmagnet</h1>
             <h2>
               Unlimited <span class="yellow-font">Entertainment</span>, Movies,
@@ -85,7 +85,7 @@
                 movie to <span class="yellow-font">watch at the theater</span>!
               </h3>
             </div>
-            <div class="d-flex calendar" id="calendar">
+            <div class="d-flex calendar " id="calendar">
               <i class="bi bi-calendar3 px-3"></i>
               <a href="https://drafthouse.com/san-antonio/theater/park-north"
                 ><h5>Movie Theater Times</h5></a
@@ -95,7 +95,8 @@
         </div>
       </header>
 
-      <div class="gallery-container mt-5" id="display-search-results">
+      
+      <div class="gallery-container d-none " id="display-search-results">
         <h2>Search Results:</h2>
         <div class="gallery-item mt-2">
           <img src="/img/img1.jpeg" alt="Image 1" />
@@ -110,7 +111,7 @@
           </div>
         </div>
       </div>
-
+   
       <section class="container mt-5">
         <div class="row d-flex">
           <div class="column">
@@ -150,11 +151,7 @@
 
             </div>
 
-            <button type="button" class="btn upcomming-type" id="show-create-form" data-bs-toggle="modal" data-target="#staticBackdrop">
-              + Add Movie
-            </button>
-
-
+            
             </div>
           </div>
         </div>
@@ -163,162 +160,15 @@
       <main class="container favorite-movies">
         <div class="row ">
           <div class=" d-flex flex-wrap gap-4 justify-content-between" id="movie-cards">
-              <!--                START OF FIRST SLIDE MOVIE DEMO     -->
-              <!--                  FIRST DUMMY CARD  -->
-
-            </div>
-      
-        </div>
-     
-        
-            
-     
-  
-          <!--           FIRST DUMMY CARD END  fdsa -->
-
-          <!--                  <img src="/img/movie-demo.png" class="d-block" alt="First slide">-->
-          <!--                  <img src="/img/movie-demo.png" class="d-block" alt="First slide">-->
-          <!--                  <img src="/img/movie-demo.png" class="d-block" alt="First slide">-->
-          <!--                </div>-->
-          <!--                END OF FIRST SLIDE MOVIE DEMO     -->
-          <!--                START OF SECOND SLIDE MOVIE DEMO     -->
-          <!--                <div class="carousel-item">-->
-          <!--                  <div class="card">-->
-          <!--                    <div class="card card-img-top"></div>-->
-          <!--                  </div>-->
-          <!--                  <img src="/img/movie-demo.png" class="d-block" alt="Second slide">-->
-          <!--                </div>-->
-          <!--                <div class="carousel-item">-->
-          <!--                  <img src="/img/movie-demo.png" class="d-block" alt="Third slide">-->
-          <!--                </div>-->
-          <!--              </div>-->
-       
+          </div>      
+        </div>  
       </main>
-
       <!-- Start of Trailer Player -->
       <div class="row" id="player-container"></div>
       <!-- End of Trailer Player -->
     </div>
 
     <footer class="footer">
-
-      <div class="row add-movie-popup" id="form-create-movie">
-        <div class="modal-fade p-0 w-100" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">
-                  Add Movie
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  >
-                  </button>
-                </h5>
-              </div>
-              <div class="modal-body">
-                <form id="create-movie">
-                  <div class="row m-0 mt-3">
-                    <div class="col px-4">
-                      <h6>Movie Title</h6>
-                      <label>
-                        <input id="movietitle" type="text" placeholder="Movie Title" />
-                      </label>
-                    </div>
-                  </div>
-                  <div class="row m-0 mt-3">
-                    <div class="col px-4">
-                      <h6>Movie Year</h6>
-                        <label>
-                          <input id="movieyear" type="text" placeholder="Movie Year" />
-                        </label>
-                    </div>
-                  </div>
-                 <div class="row gap-3 m-0 mt-3 justify-content-between pe-5">
-                    <div class="column col-4 gap-2 input-group">
-                      <div class="input-group-text add-genre- options">
-                        <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value="Action"
-                          aria-label="Checkbox for Action"
-                        />Action
-                      </div>
-                      <div class="input-group-text">
-                        <input
-                                class="form-check-input mt-0"
-                                type="checkbox"
-                                value="Adventure"
-                                aria-label="Checkbox for Adventure"
-                        />Adventure
-                      </div>
-                    </div>
-                    <div class="column col-4 gap-2 input-group">
-                      <div class="input-group-text">
-                        <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value="Comedy"
-                          aria-label="Checkbox for Comedy"
-                        />Comedy
-                      </div>
-                      <div class="input-group-text">
-                        <input
-                          class="form-check-input mt-0"
-                          type="checkbox"
-                          value="Drama"
-                          aria-label="Checkbox for Drama"
-                        />Drama
-                      </div>
-                    </div>
-
-                    <div class="column col-4 gap-2 input-group">
-                        <div class="input-group-text">
-                          <input
-                            class="form-check-input mt-0"
-                            type="checkbox"
-                            value="Family"
-                            aria-label="Checkbox for Family"
-                          />Family
-                        </div>
-                        <div class="input-group-text">
-                          <input
-                            class="form-check-input mt-0"
-                            type="checkbox"
-                            value="Sci-Fi"
-                            aria-label="Checkbox for Sci-Fi"
-                          />Sci-Fi
-                        </div>
-                    </div>      
-                </div>
-               
-                <div class="row m-0 mt-3">
-                                  <div class="col px-4">
-                                    <label>
-                                      <input id="movierating" type="text" placeholder="Movie Rating(0~10)" />
-                                    </label>
-                                  </div>
-                                </div>
-
-                </form>
-                
-                
-                
-              </div>
-              <div class="modal-footer mt-3">
-                <button type="button" class="btn btn-danger close-new-btn" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary btn-add-movie" data-bs-dismiss="modal">
-                  Add Movie
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
       <div class="row mb-3 pt-3">
         <div class="col">
           <h3>Get updated when we tell you our next favorite movie!!</h3>

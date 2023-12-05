@@ -239,7 +239,7 @@ const dbConvertMovieGenre = (genreIDs) => {
 
 // search for movies by keywords
 export const dbGetMoviesByKeywords = async (keywords) => {
-  const url = `https://api.themoviedb.org/3/search/movie?query=${keywords}`;
+  const url = `https://api.themoviedb.org/3/search/movie?query=${keywords}&include_adult=false`;
   const options = {
     method: "GET",
     headers: {
