@@ -8,6 +8,7 @@ import {
   postMovieLocal,
   patchMovie,
   deleteMovie,
+  getAllMovies,
 } from "./api.js";
 
 const updateRating = async (progress, movie) => {
@@ -93,7 +94,7 @@ const renderCard = (movie) => {
         id="rating"
         class="col-12 d-flex justify-content-between gap-3 align-items-center"
       >
-        Rating: <i class="bi bi-dash-square-fill"></i>
+        Rating: <i class="bi bi-dash-lg"></i>
         <div
           class="progress flex-grow-1"
           role="progressbar"
@@ -111,7 +112,7 @@ const renderCard = (movie) => {
           ${movie.rating}/10
           </div>
           
-        </div><i class="bi bi-plus-square-fill"></i>
+        </div><i class="bi bi-plus-lg"></i>
       </div>
     </div>
   `;
@@ -123,8 +124,8 @@ const renderCard = (movie) => {
     handlePlayTrailer(e);
   });
 
-  const plus = newElement.querySelector(".bi-plus-square-fill");
-  const minue = newElement.querySelector(".bi-dash-square-fill");
+  const plus = newElement.querySelector(".bi-plus-lg");
+  const minue = newElement.querySelector(".bi-dash-lg");
 
   // add event listener to the plus icon
   plus.addEventListener("click", async () => {
@@ -186,14 +187,7 @@ trailersrc="${movie.trailerSRC}"></i>
 };
 
 const displayLikeMovies = async () => {
-  let movies = [];
-  let length = 
-
-  for (let i = 1; i < 51; i++) {
-    let movie = await getMovie(i);
-    movies.push(movie);
-  }
-
+  let movies = await getAllMovies();
   movies.forEach((movie) => {
     renderCard(movie);
   });
@@ -207,6 +201,15 @@ const displayLikeMovies = async () => {
   // movies.forEach(async (movie) => {
   //   await postMovie(movie);
   // });
+
+  //loading page
+  window.addEventListener("load", (e) => {
+    const loader = document.querySelector(".loader");
+    loader.classList.add("loader-hidden");
+    loader.addEventListener("transitionend", (e) => {
+      document.body.removeChild("loader");
+    });
+  });
 
   // search for movies
   const searchMovies = document.querySelector("#search-movies");

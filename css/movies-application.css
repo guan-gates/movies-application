@@ -370,11 +370,19 @@ label.description-text {
   cursor: pointer;
 }
 
-.bi-plus-square-fill {
-  color: green;
+.bi-plus-lg::before {
+  color: white;
+  background-color: green;
+  font-weight: 800 !important;
+  border-radius: 5px;
+  padding: 2px;
 }
-.bi-dash-square-fill {
-  color: red;
+.bi-dash-lg::before {
+  background-color: red;
+  color: white;
+  font-weight: 800 !important;
+  border-radius: 5px;
+  padding: 2px;
 }
 
 .gallery-container {

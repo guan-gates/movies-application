@@ -8,7 +8,7 @@
       "genre": [
         "Documentary"
       ],
-      "rating": 8,
+      "rating": 2,
       "id": 1
     },
     {
@@ -34,7 +34,7 @@
         "Fantasy"
       ],
       "trailerSRC": "https://www.youtube.com/embed/otNh9bTjXWg",
-      "rating": 4,
+      "rating": 8,
       "id": 3
     },
     {
@@ -337,19 +337,6 @@
       "id": 25
     },
     {
-      "title": "Crippled Avengers",
-      "movieIndex": 40081,
-      "imgSRC": "https://image.tmdb.org/t/p/w500/s6snsNvb1UBKIqfvoKpB1p6D2NM.jpg",
-      "year": "1978",
-      "genre": [
-        "Action",
-        "Drama"
-      ],
-      "trailerSRC": "https://www.youtube.com/embed/qJdww5ck-TI",
-      "rating": 2,
-      "id": 26
-    },
-    {
       "title": "The Avengers",
       "movieIndex": 24428,
       "imgSRC": "https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg",
@@ -418,19 +405,6 @@
       "trailerSRC": "https://www.youtube.com/embed/s5mpaToJ6V8",
       "rating": 5,
       "id": 31
-    },
-    {
-      "title": "Crippled Avengers",
-      "movieIndex": 40081,
-      "imgSRC": "https://image.tmdb.org/t/p/w500/s6snsNvb1UBKIqfvoKpB1p6D2NM.jpg",
-      "year": "1978",
-      "genre": [
-        "Action",
-        "Drama"
-      ],
-      "trailerSRC": "https://www.youtube.com/embed/qJdww5ck-TI",
-      "rating": 6,
-      "id": 32
     },
     {
       "title": "The Avengers",
@@ -737,6 +711,20 @@
       "trailerSRC": "https://www.youtube.com/embed/d9ZU0_RFiDQ",
       "rating": 3,
       "id": 54
+    },
+    {
+      "title": "The Boss Bab...",
+      "movieIndex": 1045944,
+      "imgSRC": "https://image.tmdb.org/t/p/w500/iMmMxF6f2OonUrXrHKBLSYAhXly.jpg",
+      "year": "2022-12-06",
+      "genre": [
+        "Animation",
+        "Family",
+        "Adventure"
+      ],
+      "trailerSRC": "https://www.youtube.com/embed/WOstju2gg4w",
+      "rating": 5,
+      "id": 55
     }
   ]
 }

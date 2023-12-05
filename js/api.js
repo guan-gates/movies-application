@@ -18,6 +18,19 @@ export const getMovies = async (searchInput) => {
   return data;
 };
 
+export const getAllMovies = async () => {
+  const url = `http://localhost:3000/movies`;
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data;
+};
+
 export const getMovie = async (id) => {
   const url = `http://localhost:3000/movies/${id}`;
   const options = {
