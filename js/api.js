@@ -18,6 +18,19 @@ export const getMovies = async (searchInput) => {
   return data;
 };
 
+export const getAllMovies = async () => {
+  const url = `http://localhost:3000/movies`;
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data;
+};
+
 export const getMovie = async (id) => {
   const url = `http://localhost:3000/movies/${id}`;
   const options = {
@@ -35,26 +48,25 @@ export const deleteMovie = async (id) => {
   const url = `http://localhost:3000/movies/${id}`;
   const options = {
     method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    mode: "cors",
+    cache: "no-cache",
   };
-  const response = await fetch(url, options);
-  const data = await response.json();
-  return data;
+
+  try {
+    const response = await fetch(url, options);
+    if (response.ok) {
+      console.log(`Movie with ID ${id} deleted successfully.`);
+    } else {
+      console.error(`Failed to delete movie with ID ${id}.`);
+    }
+  } catch (error) {
+    console.error("Error deleting movie:", error);
+  }
 };
 
 export const postMovie = async (movie) => {
-  movie.trailerSRC = await dbGetMovieTrailerID(movie.movieId);
+  movie.trailerSRC = await dbGetMovieTrailerID(movie.movieIndex);
   movie.rating = Math.floor(Math.random() * 10) + 1;
-  // const newMovie = {
-  //   title: movie.title,
-  //   movieId: movie.movieId,
-  //   imgSRC: movie.imgSRC,
-  //   year: movie.year,
-  //   genre: movie.genre,
-  //   trailerSRC: movie.trailerSRC,
-  // };
 
   const body = JSON.stringify(movie);
 
@@ -68,6 +80,25 @@ export const postMovie = async (movie) => {
   };
   const response = await fetch(url, options);
   const data = await response.json();
+  console.log("New Movie Added");
+  return data;
+};
+
+//This post method is called when the user adds a new movie from the local submit form.
+export const postMovieLocal = async (movie) => {
+  const body = JSON.stringify(movie);
+
+  const url = `http://localhost:3000/movies`;
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: body,
+  };
+  const response = await fetch(url, options);
+  const data = await response.json();
+  console.log("New Movie Added");
   return data;
 };
 
@@ -108,16 +139,17 @@ export const dbGetMovieTrailerID = async (id) => {
 
     const results = data.results;
 
-    let imgSRC;
+    let trailerSRC;
 
     if (results.length.length !== 0) {
-      const key = results[results.length - 1].key;
-      imgSRC = `https://www.youtube.com/embed/${key}`;
+      let key = results[results.length - 1].key || "UNKNOWN";
+
+      trailerSRC = `https://www.youtube.com/embed/${key}` || `UNKNOWN`;
     } else {
-      imgSRC = `UNKNOWN`;
+      trailerSRC = `UNKNOWN`;
     }
 
-    return imgSRC;
+    return trailerSRC;
   } catch (err) {
     console.log(err);
   }
@@ -128,10 +160,11 @@ export const dbGetMovieTrailerID = async (id) => {
 };
 export const addTrailerIDandReviewtoMovies = async (movies) => {
   movies.forEach(async (movie) => {
-    let trailerKey = (await dbGetMovieTrailerID(movie.movieId)) || "NOT_FOUND";
+    let trailerKey =
+      (await dbGetMovieTrailerID(movie.movieIndex)) || "NOT_FOUND";
 
     if (trailerKey !== "NOT_FOUND") {
-      trailerKey = `https://www.youtube.com/watch?v=${trailerKey}`;
+      trailerKey = `${trailerKey}`;
     }
     movie.trailerSRC = trailerKey;
 
@@ -161,7 +194,7 @@ export const dbGetTrendingMovies = async () => {
     for (let movie of movies) {
       let trendingMovie = {};
       trendingMovie.title = movie.title || movie.name;
-      trendingMovie.movieId = movie.id;
+      trendingMovie.movieIndex = movie.id;
       trendingMovie.imgSRC = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
       trendingMovie.year = movie.release_date || movie.first_air_date;
       trendingMovie.year = trendingMovie.year.slice(0, 4);
@@ -220,19 +253,21 @@ export const dbGetMoviesByKeywords = async (keywords) => {
     const data = await response.json();
     const movies = data.results;
 
-    let keywordsMovies = [];
-    for (let movie of movies) {
-      let keywordsMovie = {};
-      keywordsMovie.title = movie.title || movie.name;
-      keywordsMovie.movieId = movie.id;
-      keywordsMovie.imgSRC = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-      keywordsMovie.year = movie.release_date || movie.first_air_date;
-      keywordsMovie.year = keywordsMovie.year.slice(0, 4);
-      keywordsMovie.genre = dbConvertMovieGenre(movie.genre_ids);
-      keywordsMovies.push(keywordsMovie);
-    }
+    if (movies) {
+      let keywordsMovies = [];
+      for (let movie of movies) {
+        let keywordsMovie = {};
+        keywordsMovie.title = movie.title || movie.name;
+        keywordsMovie.movieIndex = movie.id;
+        keywordsMovie.imgSRC = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        keywordsMovie.year = movie.release_date || movie.first_air_date;
 
-    return keywordsMovies;
+        keywordsMovie.genre = dbConvertMovieGenre(movie.genre_ids);
+        keywordsMovies.push(keywordsMovie);
+      }
+
+      return await addTrailerIDandReviewtoMovies(keywordsMovies);
+    }
   } catch (err) {
     console.log(err);
   }
