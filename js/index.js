@@ -145,7 +145,7 @@ const renderCard = (movie) => {
     await deleteMovieCard(movie.id, newElement, parentNode);
   });
 
-  parentNode.appendChild(newElement);
+  parentNode.insertBefore(newElement, parentNode.firstChild);
 };
 
 // render movie those movies cards for user to pick from
@@ -179,6 +179,7 @@ trailersrc="${movie.trailerSRC}"></i>
   likeMovie.addEventListener("click", async () => {
     likeMovie.classList.add("likemovie");
     await postMovie(movie);
+    displayLikeMovies();
   });
 
   return newElement;
@@ -193,6 +194,8 @@ const renderTemperayCards = (movies) => {
 };
 
 const displayLikeMovies = async () => {
+  const parentNode = document.querySelector("#movie-cards");
+  parentNode.innerHTML = ``;
   let movies = await getAllMovies();
   movies.forEach((movie) => {
     renderCard(movie);
