@@ -5,13 +5,69 @@ import {
   addTrailerIDandReviewtoMovies,
   dbGetMovieTrailerID,
   postMovie,
+  postMovieLocal,
+  patchMovie,
+  deleteMovie,
 } from "./api.js";
+
+const updateRating = async (progress, movie) => {
+  await patchMovie(movie);
+  progress.innerHTML = ``;
+  progress.innerHTML = `
+  <div class="progress-bar bg-success" style="width: ${movie.rating}0%" id="rating-bar"
+  value="${movie.rating}">${movie.rating}/10 </div>
+  `;
+};
+
+const deleteMovieCard = async (id, childNode, parentNode) => {
+  deleteMovie(id);
+  parentNode.removeChild(childNode);
+};
+
+const handlePlayTrailer = (e) => {
+  const trailerSRC = e.target.getAttribute("trailersrc");
+  let playerContainer = document.querySelector("#player-container");
+
+  playerContainer.innerHTML = `
+    <div class="trailer-player-bg"></div>
+    <iframe class="trailer-player" src="${trailerSRC}"></iframe>
+  `;
+  const closeBtn = playerContainer.querySelector(".trailer-player-bg");
+  closeBtn.addEventListener("click", () => {
+    playerContainer.innerHTML = "";
+  });
+};
+
+const createMovieForm = () => {
+  const form = document.querySelector("#create-movie");
+  const movieTitle = form.querySelector("#movietitle").value;
+  const movieYear = form.querySelector("#movieyear").value;
+  const movieGenres = form.querySelectorAll(" input:checked");
+  let genres = [];
+  movieGenres.forEach((movieGenre) => {
+    genres.push(movieGenre.value);
+  });
+
+  const rating = document.querySelector("#movierating").value;
+  const newMovie = {
+    title: movieTitle,
+    movieIndex: Math.floor(Math.random() * 1000000),
+    imgSRC: "./img/movie-demo.png",
+    year: movieYear,
+    genre: genres,
+    rating: rating,
+  };
+  return newMovie;
+};
 
 const renderCard = (movie) => {
   const parentNode = document.querySelector("#movie-cards");
   const newElement = document.createElement("div");
+  if (movie.title.length > 15) {
+    movie.title = movie.title.slice(0, 12) + "...";
+  }
   newElement.classList.add("movie-card");
-  newElement.setAttribute("movieid", `${movie.movieId}`);
+  newElement.setAttribute("movieIndex", `${movie.movieIndex}`);
   newElement.innerHTML = `
     <img
       src="${movie.imgSRC}"
@@ -37,7 +93,7 @@ const renderCard = (movie) => {
         id="rating"
         class="col-12 d-flex justify-content-between gap-3 align-items-center"
       >
-        Rating:
+        Rating: <i class="bi bi-dash-square-fill"></i>
         <div
           class="progress flex-grow-1"
           role="progressbar"
@@ -54,34 +110,96 @@ const renderCard = (movie) => {
           >
           ${movie.rating}/10
           </div>
-        </div>
+          
+        </div><i class="bi bi-plus-square-fill"></i>
       </div>
     </div>
   `;
 
   const playBTN = newElement.querySelector(".play-movie-card");
-  console.log(playBTN);
+
+  // add event listener to the play button
   playBTN.addEventListener("click", (e) => {
-    console.log(playBTN);
     handlePlayTrailer(e);
+  });
+
+  const plus = newElement.querySelector(".bi-plus-square-fill");
+  const minue = newElement.querySelector(".bi-dash-square-fill");
+
+  // add event listener to the plus icon
+  plus.addEventListener("click", async () => {
+    movie.rating += 1;
+    const progress = newElement.querySelector(".progress");
+    updateRating(progress, movie);
+  });
+  // add event listener to the minus icon
+  minue.addEventListener("click", async () => {
+    movie.rating -= 1;
+    const progress = newElement.querySelector(".progress");
+    updateRating(progress, movie);
+  });
+
+  const deletebtn = newElement.querySelector(".delete-movie");
+  deletebtn.addEventListener("click", async () => {
+    await deleteMovieCard(movie.id, newElement, parentNode);
   });
 
   parentNode.appendChild(newElement);
 };
 
-const handlePlayTrailer = (e) => {
-  const trailerSRC = e.target.getAttribute("trailersrc");
-  let playerContainer = document.querySelector("#player-container");
+// render movie those movies cards for user to pick from
+const renderTemperaryCard = (movie) => {
+  const parentNode = document.querySelector("#display-search-results");
 
-  playerContainer.innerHTML = `
-    <div class="trailer-player-bg"></div>
-    <iframe class="trailer-player" src="${trailerSRC}"></iframe>
+  const newElement = document.createElement("div");
+  if (movie.title.length > 15) {
+    movie.title = movie.title.slice(0, 12) + "...";
+  }
+  newElement.classList.add("gallery-item");
+  newElement.innerHTML = `
+  <img src="${movie.imgSRC}" />
+  <div class="d-flex justify-content-between px-1 mt-2">
+    <p>${movie.title}</p>
+    <p>${movie.year}</p>
+    <div class="d-flex gap-1 align-items-center">
+      <i class="bi bi-play-fill play-movie-card"
+trailersrc="${movie.trailerSRC}"></i>
+<i class="bi bi-heart-fill small"></i>
+    </div>
+  </div>
   `;
-  const closeBtn = playerContainer.querySelector(".trailer-player-bg");
-  closeBtn.addEventListener("click", () => {
-    playerContainer.innerHTML = "";
+
+  const playBTN = newElement.querySelector(".play-movie-card");
+  // add event listener to the play button
+  playBTN.addEventListener("click", (e) => {
+    handlePlayTrailer(e);
+  });
+
+  const likeMovie = newElement.querySelector(".bi-heart-fill");
+  // once liked, make the button red and add the movie to the json-server
+  likeMovie.addEventListener("click", async () => {
+    likeMovie.classList.add("likemovie");
+    await postMovie(movie);
+  });
+
+  parentNode.appendChild(newElement);
+};
+
+const displayLikeMovies = async () => {
+  let movies = [];
+  let length = 
+
+  for (let i = 1; i < 51; i++) {
+    let movie = await getMovie(i);
+    movies.push(movie);
+  }
+
+  movies.forEach((movie) => {
+    renderCard(movie);
   });
 };
+
+// handle submit button event to show the search results
 
 (async () => {
   // !!!Do not delete!!! The following codes are successful.
@@ -90,9 +208,38 @@ const handlePlayTrailer = (e) => {
   //   await postMovie(movie);
   // });
 
-  const movie8 = await getMovie("3");
-  const movie1 = await getMovie("4");
-  [movie8, movie1].forEach((movie) => {
-    renderCard(movie);
+  // search for movies
+  const searchMovies = document.querySelector("#search-movies");
+  searchMovies.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const keywords = searchMovies.querySelector("input").value;
+    let results = await dbGetMoviesByKeywords(keywords);
+    console.log(results);
+    results.forEach((movie) => {
+      renderTemperaryCard(movie);
+    });
+  });
+
+  //display all the liked movies
+  await displayLikeMovies();
+
+  //pop up the create new movie form
+  const newMovieForm = document.querySelector("#form-create-movie");
+
+  document.querySelector("#show-create-form").addEventListener("click", () => {
+    newMovieForm.classList.add("moving-left-add");
+  });
+
+  // create a new movie
+  const createMovieSubmitButton = document.querySelector(".btn-add-movie");
+  createMovieSubmitButton.addEventListener("click", async (e) => {
+    e.preventDefault();
+    const newMovie = createMovieForm();
+    await postMovieLocal(newMovie);
+  });
+
+  //close the add movie modal
+  document.querySelector(".close-new-btn").addEventListener("click", () => {
+    newMovieForm.classList.remove("moving-left-add");
   });
 })();

@@ -87,8 +87,8 @@ a {
 }
 
 header.container {
-  background-image: url(/img/landing-bg.png);
-  background-position: center;
+  background-image: url("https://image.tmdb.org/t/p/w500//m3tdSyl11fhgXPDSEt3aBctTqGP.jpg");
+
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -146,7 +146,8 @@ button.sign-in {
   border-radius: 20px;
   padding: 2px 15px;
 }
-i.bi-globe-americas {
+i.bi-globe-americas,
+i.bi-play-fill {
   color: #ccff00;
 }
 
@@ -217,7 +218,7 @@ button.play {
   box-shadow: 12px 12px 2px 1px #192711;
   width: 35%;
   position: absolute;
-  right: -600px;
+  right: -700px;
   top: 50%;
 }
 .moving-left-add {
@@ -295,6 +296,7 @@ label.description-text {
   background-color: #ccff00;
   border: 2px solid black;
   font-weight: bold;
+  border-radius: 5px;
 }
 .form-range {
   color: #ccff00;
@@ -351,15 +353,56 @@ label.description-text {
   position: fixed;
 }
 
-.carousel-control-next,
-.carousel-control-prev {
-  width: 50px;
-}
-.carousel-inner {
-  padding: 0 50px;
-}
 .movie-card {
   position: relative;
+  overflow: hidden;
+
+  & img {
+    max-width: 280px;
+    border-radius: 5px;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+#rating {
+  cursor: pointer;
+}
+
+.bi-plus-square-fill {
+  color: green;
+}
+.bi-dash-square-fill {
+  color: red;
+}
+
+.gallery-container {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent images from wrapping to the next line */
+  height: 550px;
+}
+
+/* Style the individual image divs */
+.gallery-item {
+  display: inline-block; /* Display images in a row */
+  margin-right: 10px; /* Add some space between images */
+  position: relative;
+  & i {
+    cursor: pointer;
+  }
+}
+
+/* Style the images */
+.gallery-item img {
+  max-width: 280px; /* Set a fixed width for the images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 5px;
+}
+
+.likemovie {
+  color: red;
 }
 
 @keyframes loading {

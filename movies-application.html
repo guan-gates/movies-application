@@ -47,7 +47,7 @@
           <div class="column col-sm-12 col-md-5">
             <div class="d-flex justify-content-evenly gap-1 align-items-center">
               <i class="bi bi-search"></i>
-              <form class="d-flex" role="search">
+              <form class="d-flex" role="search" id="search-movies">
                 <input
                   class="form-control-search me-2"
                   type="search"
@@ -95,6 +95,22 @@
         </div>
       </header>
 
+      <div class="gallery-container mt-5" id="display-search-results">
+        <h2>Search Results:</h2>
+        <div class="gallery-item mt-2">
+          <img src="/img/img1.jpeg" alt="Image 1" />
+          <div class="d-flex justify-content-between px-1 mt-2">
+            <p>movie Title</p>
+            <p>year</p>
+            <div class="d-flex gap-1 align-items-center">
+              <i class="bi bi-play-fill play-movie-card"
+        trailersrc=""></i>
+        <i class="bi bi-heart-fill small"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <section class="container mt-5">
         <div class="row d-flex">
           <div class="column">
@@ -134,7 +150,7 @@
 
             </div>
 
-            <button type="button" class="btn upcomming-type" data-bs-toggle="modal" data-target="#staticBackdrop">
+            <button type="button" class="btn upcomming-type" id="show-create-form" data-bs-toggle="modal" data-target="#staticBackdrop">
               + Add Movie
             </button>
 
@@ -145,32 +161,19 @@
       </section>
       <!-- CAROUSEL BEGIN  this section contains all local movies that user likes  -->
       <main class="container favorite-movies">
-        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active d-flex gap-4" id="movie-cards">
+        <div class="row ">
+          <div class=" d-flex flex-wrap gap-4 justify-content-between" id="movie-cards">
               <!--                START OF FIRST SLIDE MOVIE DEMO     -->
               <!--                  FIRST DUMMY CARD  -->
 
             </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselId"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselId"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+      
+        </div>
+     
+        
+            
+     
+  
           <!--           FIRST DUMMY CARD END  fdsa -->
 
           <!--                  <img src="/img/movie-demo.png" class="d-block" alt="First slide">-->
@@ -189,7 +192,7 @@
           <!--                  <img src="/img/movie-demo.png" class="d-block" alt="Third slide">-->
           <!--                </div>-->
           <!--              </div>-->
-        </div>
+       
       </main>
 
       <!-- Start of Trailer Player -->
@@ -199,10 +202,9 @@
 
     <footer class="footer">
 
-      <div class="row moving-left-add add-movie-popup">
+      <div class="row add-movie-popup" id="form-create-movie">
         <div class="modal-fade p-0 w-100" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
-
             <div class="modal-content">
               <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">
@@ -217,12 +219,12 @@
                 </h5>
               </div>
               <div class="modal-body">
-                <form>
+                <form id="create-movie">
                   <div class="row m-0 mt-3">
                     <div class="col px-4">
                       <h6>Movie Title</h6>
                       <label>
-                        <input type="text" placeholder="Movie Title" />
+                        <input id="movietitle" type="text" placeholder="Movie Title" />
                       </label>
                     </div>
                   </div>
@@ -230,243 +232,85 @@
                     <div class="col px-4">
                       <h6>Movie Year</h6>
                         <label>
-                          <input type="text" placeholder="Movie Year" />
+                          <input id="movieyear" type="text" placeholder="Movie Year" />
                         </label>
                     </div>
                   </div>
-                  <div class="row m-0 mt-3">
-                    <div class="col px-4 w-10">
-                      <h6>Description</h6>
+                 <div class="row gap-3 m-0 mt-3 justify-content-between pe-5">
+                    <div class="column col-4 gap-2 input-group">
+                      <div class="input-group-text add-genre- options">
+                        <input
+                          class="form-check-input mt-0"
+                          type="checkbox"
+                          value="Action"
+                          aria-label="Checkbox for Action"
+                        />Action
+                      </div>
+                      <div class="input-group-text">
+                        <input
+                                class="form-check-input mt-0"
+                                type="checkbox"
+                                value="Adventure"
+                                aria-label="Checkbox for Adventure"
+                        />Adventure
+                      </div>
                     </div>
-                  </div>
-                  <div class="row m-0">
-                    <div class="col px-4">
-                      <label class="description-text">
-                        <textarea rows="5" cols="30"></textarea>
-                      </label>
+                    <div class="column col-4 gap-2 input-group">
+                      <div class="input-group-text">
+                        <input
+                          class="form-check-input mt-0"
+                          type="checkbox"
+                          value="Comedy"
+                          aria-label="Checkbox for Comedy"
+                        />Comedy
+                      </div>
+                      <div class="input-group-text">
+                        <input
+                          class="form-check-input mt-0"
+                          type="checkbox"
+                          value="Drama"
+                          aria-label="Checkbox for Drama"
+                        />Drama
+                      </div>
                     </div>
-                  </div>
-                </form>
-                <div class="row d-flex justify-content-around m-0 mt-3">
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                        class="form-check-input mt-0"
-                        type="checkbox"
-                        value="Action"
-                        aria-label="Checkbox for Action"
-                      />Action
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                              class="form-check-input mt-0"
-                              type="checkbox"
-                              value="Adventure"
-                              aria-label="Checkbox for Adventure"
-                      />Adventure
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                        class="form-check-input mt-0"
-                        type="checkbox"
-                        value="Comedy"
-                        aria-label="Checkbox for Comedy"
-                      />Comedy
-                    </div>
-                  </div>
-                </div>
-                <div class="row d-flex justify-content-around m-0 mt-3">
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                        class="form-check-input mt-0"
-                        type="checkbox"
-                        value="Drama"
-                        aria-label="Checkbox for Drama"
-                      />Drama
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                        class="form-check-input mt-0"
-                        type="checkbox"
-                        value="Family"
-                        aria-label="Checkbox for Family"
-                      />Family
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                        class="form-check-input mt-0"
-                        type="checkbox"
-                        value="Sci-Fi"
-                        aria-label="Checkbox for Sci-Fi"
-                      />Sci-Fi
-                    </div>
-                  </div>
-                </div>
-                <div class="row m-0 mt-3">
-                <div class="col px-4">
-                  <label for="customRange2" class="form-label"
-                    >Rating
-                    <input
-                      type="range"
-                      class="form-range"
-                      min="0"
-                      max="5"
-                      id="customRange2"
-                    />
-                  </label>
-                </div>
-              </div>
-              </div>
-              <div class="modal-footer mt-3">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                  Add Movie
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-            </div>
 
-      <div class="row moving-left-edit edit-movie-popup">
-        <div class="modal-fade p-0 w-100" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">
-                  Edit Movie
-                  <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                  >
-                  </button>
-                </h5>
-              </div>
-              <div class="modal-body">
-                <form>
-                  <div class="row m-0 mt-3">
-                    <div class="col px-4">
-                      <h6>Movie Title</h6>
-                      <label>
-                        <input type="text" placeholder="Movie Title" />
-                      </label>
-                    </div>
-                  </div>
-                  <div class="row m-0 mt-3">
-                    <div class="col px-4">
-                      <h6>Movie Year</h6>
-                      <label>
-                        <input type="text" placeholder="Movie Year" />
-                      </label>
-                    </div>
-                  </div>
-                  <div class="row m-0 mt-3">
-                    <div class="col px-4 w-10">
-                      <h6>Description</h6>
-                    </div>
-                  </div>
-                  <div class="row m-0">
-                    <div class="col px-4">
-                      <label class="description-text">
-                        <textarea rows="5" cols="30"></textarea>
-                      </label>
-                    </div>
-                  </div>
-                </form>
-                <div class="row d-flex justify-content-around m-0 mt-3">
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                              class="form-check-input mt-0"
-                              type="checkbox"
-                              value="Action"
-                              aria-label="Checkbox for Action"
-                      />Action
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                              class="form-check-input mt-0"
-                              type="checkbox"
-                              value="Adventure"
-                              aria-label="Checkbox for Adventure"
-                      />Adventure
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                              class="form-check-input mt-0"
-                              type="checkbox"
-                              value="Comedy"
-                              aria-label="Checkbox for Comedy"
-                      />Comedy
-                    </div>
-                  </div>
+                    <div class="column col-4 gap-2 input-group">
+                        <div class="input-group-text">
+                          <input
+                            class="form-check-input mt-0"
+                            type="checkbox"
+                            value="Family"
+                            aria-label="Checkbox for Family"
+                          />Family
+                        </div>
+                        <div class="input-group-text">
+                          <input
+                            class="form-check-input mt-0"
+                            type="checkbox"
+                            value="Sci-Fi"
+                            aria-label="Checkbox for Sci-Fi"
+                          />Sci-Fi
+                        </div>
+                    </div>      
                 </div>
-                <div class="row d-flex justify-content-around m-0 mt-3">
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                              class="form-check-input mt-0"
-                              type="checkbox"
-                              value="Drama"
-                              aria-label="Checkbox for Drama"
-                      />Drama
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                              class="form-check-input mt-0"
-                              type="checkbox"
-                              value="Family"
-                              aria-label="Checkbox for Family"
-                      />Family
-                    </div>
-                  </div>
-                  <div class="col input-group">
-                    <div class="input-group-text">
-                      <input
-                              class="form-check-input mt-0"
-                              type="checkbox"
-                              value="Sci-Fi"
-                              aria-label="Checkbox for Sci-Fi"
-                      />Sci-Fi
-                    </div>
-                  </div>
-                </div>
+               
                 <div class="row m-0 mt-3">
-                  <div class="col px-4">
-                    <label for="customRange2" class="form-label"
-                    >Rating
-                      <input
-                              type="range"
-                              class="form-range"
-                              min="0"
-                              max="5"
-                              id="customRange2"
-                      />
-                    </label>
-                  </div>
-                </div>
+                                  <div class="col px-4">
+                                    <label>
+                                      <input id="movierating" type="text" placeholder="Movie Rating(0~10)" />
+                                    </label>
+                                  </div>
+                                </div>
+
+                </form>
+                
+                
+                
               </div>
               <div class="modal-footer mt-3">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                  Save Changes
+                <button type="button" class="btn btn-danger close-new-btn" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-add-movie" data-bs-dismiss="modal">
+                  Add Movie
                 </button>
               </div>
             </div>
