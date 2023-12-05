@@ -713,46 +713,17 @@
       "id": 55
     },
     {
-      "title": "Avengers: In...",
-      "movieIndex": 299536,
-      "imgSRC": "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
-      "year": "2018-04-25",
+      "title": "Barbie in A ...",
+      "movieIndex": 13459,
+      "imgSRC": "https://image.tmdb.org/t/p/w500/fX9g1AE1JIqjX3LPPKVjcmHs6fd.jpg",
+      "year": "2008-11-03",
       "genre": [
-        "Adventure",
-        "Action",
-        "Science Fiction"
+        "Animation",
+        "Family"
       ],
-      "trailerSRC": "https://www.youtube.com/embed/sAOzrChqmd0",
-      "rating": 4,
-      "id": 58
-    },
-    {
-      "title": "Avenger",
-      "movieIndex": 47369,
-      "imgSRC": "https://image.tmdb.org/t/p/w500/cEI5aazuAVJ3PcWeNM8gxYiNjmq.jpg",
-      "year": "2006-04-09",
-      "genre": [
-        "TV Movie",
-        "Action",
-        "Thriller"
-      ],
-      "trailerSRC": "https://www.youtube.com/embed/HUmHYwVCuhg",
-      "rating": 3,
-      "id": 59
-    },
-    {
-      "title": "Avengers: In...",
-      "movieIndex": 299536,
-      "imgSRC": "https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg",
-      "year": "2018-04-25",
-      "genre": [
-        "Adventure",
-        "Action",
-        "Science Fiction"
-      ],
-      "trailerSRC": "https://www.youtube.com/embed/sAOzrChqmd0",
-      "rating": 9,
-      "id": 60
+      "trailerSRC": "https://www.youtube.com/embed/-YSCuKARLi8",
+      "rating": 7,
+      "id": 56
     }
   ]
 }
